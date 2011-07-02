@@ -1,7 +1,6 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.0.9'
-gem 'spork'
 gem 'autotest'
 gem 'scaffoldhub'
 
@@ -10,6 +9,15 @@ gem 'scaffoldhub'
 
 gem 'sqlite3'
 gem 'jquery-rails'
+
+group :development do
+  gem 'rspec-rails', '2.6.1'
+end
+
+group :test do
+  gem 'rspec-rails', '2.6.1'
+  gem 'spork', '0.9.0.rc8'
+end
 
 # Use unicorn as the web server
 # gem 'unicorn'
