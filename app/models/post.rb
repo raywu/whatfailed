@@ -13,10 +13,10 @@ class Post < ActiveRecord::Base
   # validates_presence_of :url, :if => :exist?
   # 
   # def exist?
-  #   if url.empty?
+  #   if url.blank?
   #     url = @post
   #   else
-  #     url
+  #     url = url
   #   end
   # end
 end
