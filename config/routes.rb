@@ -1,4 +1,6 @@
 Whatfailed::Application.routes.draw do
+  resources :tags
+
   resources :posts
   
   root :to => "posts#index"
