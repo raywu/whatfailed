@@ -3,20 +3,22 @@
 <h3>a collection of startup stories</h3>
 
 <table>
-  <tr>
+  <!-- <tr>
     <th>Title</th>
     <th>Time</th>
     <th>Content</th>
     <th></th>
     <th></th>
     <th></th>
-  </tr>
+  </tr> -->
 
 <% @posts.each do |post| %>
   <tr>
-    <td><a href="<%= post.url %>"><%= post.title %></a></td>
+    <td><%= link_to post.title, post.url %></a></td>
 	<td><%= post.created_at %></td>
     <td><%= post.content %></td>
+  </tr>
+  <tr>
     <td><%= link_to 'Show', post %></td>
     <td><%= link_to 'Edit', edit_post_path(post) %></td>
     <td><%= link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete %></td>
