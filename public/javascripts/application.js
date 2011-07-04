@@ -7,7 +7,7 @@ $(function() {
 		theme: "facebook"
 	});
 });
-// 
+// The following is from http://frumbert.blogspot.com/2011/02/overcoming-disquss-load-time-using.html
 // $(document).ready(function () {
 //     $("div[id$=_commentSystem]").css({ padding: ".5em" }).appear(function () {
 //         $.getScript("http://" + disqus_shortname + ".disqus.com/embed.js");
