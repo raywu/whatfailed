@@ -5,10 +5,10 @@
   <%= @post.title %>
 </p>
 
-<p>
+<!-- <p>
   <b>Url:</b>
   <%= @post.url %>
-</p>
+</p> -->
 
 <p>
   <b>Content:</b>
@@ -17,8 +17,12 @@
 
 <p>
   <b>Tag:</b>
-  <%= @post.tags.all %>
+  <%= @post.tags.each do |tag| %>
+  <%= tag.name %>
+  <% end %>
 </p>
+
+<%= render 'comment' %>
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>
