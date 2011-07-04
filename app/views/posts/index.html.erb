@@ -14,11 +14,14 @@
 
 <% @posts.each do |post| %>
   <tr>
-    <td><% if post.url.blank? %>
+    <td>
+		<b>
+		<% if post.url.blank? %>
 		<%= link_to post.title, post %>
 		<% else %>
 		<%= link_to post.title, post.url %>
 		<% end %>
+		</b>
 	</td>
     <!-- <td><%= post.tags.each do |tag| %>
 		<%= tag.name %>
@@ -37,7 +40,7 @@
     <td><%= link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
   <tr>
-	<td><%= link_to 'Comment', post_path(post, :anchor => "disqus_thread") %></td>
+	<td><%= link_to 'Comment', post_path(post, :anchor => "disqus_thread"), 'data-disqus-identifier' => post.id %></td>
   </tr>
 <% end %>
 </table>
