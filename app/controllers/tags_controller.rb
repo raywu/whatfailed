@@ -2,7 +2,7 @@ class TagsController < ApplicationController
   # GET /tags
   # GET /tags.xml
   def index
-    @tags = Tag.where("name like ?", "%#{params[:q]}").select(['name', 'id'])
+    @tags = Tag.where("name like ?", "%#{params[:q]}%").select(['name', 'id'])
 
     respond_to do |format|
       format.html # index.html.erb
