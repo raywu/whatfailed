@@ -29,7 +29,7 @@
   </tr>
   <tr>
     <td><%= post.tags.each do |tag| %>
-		<%= tag.name %>
+		<%= tag.name.to_json %>
 		<% end %>
 	</td>
 	<!-- <td><%= link_to 'Show', post %></td> -->
