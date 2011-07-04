@@ -1,4 +1,8 @@
-<b>Tags:</b>
+<!-- <b>Tags:</b>
 <%= @post.tags.each do |tag| %>
-<%= tag.name %>
+<%= tag.name.to_json %>
+<% end %> -->
+
+<%= form_for(@post) do |f| %>
+<%= f.text_field :tag_tokens, "data-pre" => @post.tags.map(&:attributes).to_json %>
 <% end %>
