@@ -37,7 +37,7 @@
     <td><%= link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
   <tr>
-	<td><%= link_to 'Comment', post %></td>
+	<td><%= link_to 'Comment', post_path(post, :anchor => "disqus_thread") %></td>
   </tr>
 <% end %>
 </table>
