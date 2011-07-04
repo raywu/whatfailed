@@ -2,7 +2,7 @@ class TagsController < ApplicationController
   # GET /tags
   # GET /tags.xml
   def index
-    @tags = Tag.where("name like ?", "%#{params[:q]}").select(['name', 'id'])
+    @tags = Tag.where("name like ?", "%#{params[:q]}%").select(['name', 'id'])
 
     respond_to do |format|
       format.html # index.html.erb
@@ -19,6 +19,7 @@ class TagsController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @tag }
+      format.json { render :json => @tags.map(&:attributes) }
     end
   end
 

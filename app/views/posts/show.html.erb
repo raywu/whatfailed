@@ -10,12 +10,14 @@
   <%= @post.url %>
 </p> -->
 
+<!-- this follow only shows URL if URL exists -->
 <p>
   <% if @post.url.blank? == false %>
   <%= link_to @post.url %>
   <% end %>
 </p>
 
+<!-- this following only shows Content if Content exists -->
 <p>
   <% if @post.content.blank? == false %>
   <b><%= 'Content:' %></b>
