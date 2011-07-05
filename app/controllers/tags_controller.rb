@@ -1,6 +1,7 @@
 class TagsController < ApplicationController
   # GET /tags
   # GET /tags.xml
+  
   def index
     @tags = Tag.where("name like ?", "%#{params[:q]}%").select(['name', 'id'])
 
@@ -15,6 +16,7 @@ class TagsController < ApplicationController
   # GET /tags/1.xml
   def show
     @tag = Tag.find(params[:id])
+    @posts = @tag.posts
 
     respond_to do |format|
       format.html # show.html.erb

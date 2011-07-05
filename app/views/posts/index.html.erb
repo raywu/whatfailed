@@ -32,7 +32,7 @@
   </tr>
   <tr>
     <td><%= post.tags.each do |tag| %>
-		<%= tag.name.to_json %>
+		<%= tag.name.split(",") %>
 		<% end %>
 	</td>
 	<!-- <td><%= link_to 'Show', post %></td> -->
