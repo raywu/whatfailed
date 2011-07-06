@@ -7,7 +7,8 @@
 
 <p>
   <b>Posts:</b>
-  <%= @posts %>
+  <%= @posts.find(:all) %>
+<!-- ruby loop while, for, until -->
 </p>
 
 <%= link_to 'Edit', edit_tag_path(@tag) %> |
