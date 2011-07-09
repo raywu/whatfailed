@@ -10,10 +10,6 @@
   <% @posts.each do |post| %>
   <%= link_to post.title, post %>
   <% end %>
-  <!-- the following is in the controller that renders @posts, but shows titles in an array -->
-  <!-- <%= @tag.posts.map(&:title) %> -->
-  <!-- <%= @posts.find(:all) %> -->
-<!-- ruby loop while, for, until -->
 </p>
 
 <%= link_to 'Edit', edit_tag_path(@tag) %> |
