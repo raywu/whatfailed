@@ -24,10 +24,9 @@
     <%= f.text_area :content %>
   </div>
   <div class="field">
-	<%= render "tag" %>
 	<!-- render tag partial within form partial -->
-    <!-- <%= f.label :tag_tokens, "Tags" %><br />
-    <%= f.text_field :tag_tokens, "data-pre" => @post.tags.map(&:attributes).to_json %> -->
+    <%= f.label :tag_tokens, "Tags" %><br />
+    <%= f.text_field :tag_tokens, "data-pre" => @post.tags.map(&:attributes).to_json %>
   </div>
   <div class="actions">
     <%= f.submit %>

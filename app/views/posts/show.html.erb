@@ -26,7 +26,12 @@
 </p>
 
 <p>
-<%= render 'tag' %>
+	<%= form_for(@post) do |f| %>
+	<div class="field">
+	<b><%= f.label :tag_tokens, "Tags:" %><b/>
+	<%= f.text_field :tag_tokens, "data-pre" => @post.tags.map(&:attributes).to_json %>
+	<%= f.submit 'Update' %>
+	<% end %>
 </p>
 
 <p>
