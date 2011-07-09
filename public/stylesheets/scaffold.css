@@ -54,3 +54,33 @@ div.field, div.actions {
   font-size: 12px;
   list-style: square;
 }
+
+#title a {
+  font-size: 14px;
+  text-decoration: none;
+}
+
+#info {
+  font-size: 10px;
+  color: #888;
+}
+
+#tag a {
+	padding: 2px;
+	font-size: 10px;
+	background: #ddd;
+	border-radius: 5px;
+	text-decoration: none;
+}
+
+#title {
+	font-weight: bold;
+}
+
+#url {
+	color: #888;
+}
+
+td {
+	padding-bottom: 10px;
+}

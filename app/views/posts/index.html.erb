@@ -2,27 +2,25 @@
 <p>
 <h3>a collection of startup stories</h3>
 
-<table>
+<table width="50%">
 
+<% user = "Joe Smith" %>
 <% @posts.each do |post| %>
   <tr>
     <td>
-		<b>
-		<%= title(post) %>
-		</b>
+		<span id="title"><%= title(post) %></span>
+		<span id="url"><%= link(post) %></span>
+		<div id="info">
+			Posted by <%= link_to user, "#" %>
+			on <%= post.created_at.strftime("%b %d, %Y") %>
+			| <%= link_to 'Comment', post_path(post, :anchor => "disqus_thread"), 'data-disqus-identifier' => post.id %></
+		</div>
+		<div id="tags">
+			<% post.tags.each do |tag| %>
+				<span id="tag"><%= link_to "##{tag.name}", tag %></span>
+			<% end %>
+		</div>
 	</td>
-	<td><%= post.created_at %></td>
-  </tr>
-  <tr>
-    <td><% post.tags.each do |tag| %>
-		<%= link_to tag.name, tag %>
-		<% end %>
-	</td>
-    <td><%= link_to 'Edit', edit_post_path(post) %></td>
-    <td><%= link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-  <tr>
-	<td><%= link_to 'Comment', post_path(post, :anchor => "disqus_thread"), 'data-disqus-identifier' => post.id %></td>
   </tr>
 <% end %>
 </table>
