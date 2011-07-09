@@ -7,7 +7,11 @@
 
 <p>
   <b>Posts:</b>
-  <%= @tag.posts.map(&:title)%>
+  <%= @posts.map(&:title).each do |title| %>
+  <%= link_to title.split(",") %>
+  <% end %>
+  <!-- the following is in the controller that renders @posts, but shows titles in an array -->
+  <!-- <%= @tag.posts.map(&:title) %> -->
   <!-- <%= @posts.find(:all) %> -->
 <!-- ruby loop while, for, until -->
 </p>
