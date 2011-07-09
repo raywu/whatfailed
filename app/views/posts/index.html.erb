@@ -12,6 +12,7 @@
     <th></th>
   </tr> -->
 
+
 <% @posts.each do |post| %>
   <tr>
     <td>
@@ -44,6 +45,16 @@
   </tr>
 <% end %>
 </table>
+
+<br/>
+
+<p>
+	<%= will_paginate @posts %>	
+</p>
+
+<p>
+	<%= page_entries_info @posts %>
+</p>
 
 <br />
 
