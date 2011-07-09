@@ -7,8 +7,8 @@
 
 <p>
   <b>Posts:</b>
-  <%= @posts.map(&:title).each do |title| %>
-  <%= link_to title.split(",") %>
+  <% @posts.each do |post| %>
+  <%= link_to post.title, post %>
   <% end %>
   <!-- the following is in the controller that renders @posts, but shows titles in an array -->
   <!-- <%= @tag.posts.map(&:title) %> -->
