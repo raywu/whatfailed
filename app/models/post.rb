@@ -11,14 +11,5 @@ class Post < ActiveRecord::Base
   end
   
   validates :title, :presence => true
-#  The following is meant to define no url as valid
-  # validates_presence_of :url, :if => :exist?
-  # 
-  # def exist?
-  #   if url.blank?
-  #     url = @post
-  #   else
-  #     url = url
-  #   end
-  # end
+
 end

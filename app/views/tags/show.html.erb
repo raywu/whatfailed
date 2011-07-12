@@ -11,4 +11,14 @@
   <% end %>
 </p>
 
+<p>
+	<%= will_paginate @posts %>	
+</p>
+
+<p>
+	<%= page_entries_info @posts %>
+</p>
+
+<br/>
+
 <%= link_to 'Back to Home Page', posts_path %>

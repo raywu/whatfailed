@@ -1,6 +1,8 @@
 class TagsController < ApplicationController
   # GET /tags
   # GET /tags.xml
+  # cattr_reader :per_page
+  # @@per_page = 4
   
   def index
     @tags = Tag.where("name like ?", "%#{params[:q]}%").select(['name', 'id'])
@@ -17,6 +19,7 @@ class TagsController < ApplicationController
   def show
     @tag = Tag.find(params[:id])
     @posts = @tag.posts
+    @posts = @posts.paginate :page => params[:page], :order => 'created_at DESC'
 
     respond_to do |format|
       format.html # show.html.erb
