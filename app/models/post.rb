@@ -11,5 +11,6 @@ class Post < ActiveRecord::Base
   end
   
   validates :title, :presence => true
+  validates :url, :format => { :with => /^(http|https)/, :message => "needs to start with http:// or https://"}
 
 end
