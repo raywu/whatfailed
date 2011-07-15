@@ -4,6 +4,7 @@ gem 'rails', '3.0.9'
 gem 'autotest'
 gem 'scaffoldhub'
 gem "will_paginate", "~> 3.0.pre2"
+gem 'omniauth'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
