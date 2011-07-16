@@ -5,3 +5,27 @@
 #
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Daley', :city => cities.first)
+
+tags = [
+  "Scaling",
+	"Funding",
+	"Vclivingdead",
+	"Partnership",
+	"Priorities",
+	"Functionality",
+	"Iteration",
+	"Traction",
+	"Design",
+	"Privacy",
+	"Customer",
+	"Termsheet",
+	"Management",
+	"Outsourcing",
+	"Competition",
+	"Marketing",
+	"Productfit",
+	"Sales",
+	"Board"
+]
+
+tags.each {|tag| Tag.create(:name => tag)}
