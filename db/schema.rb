@@ -10,11 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(:version => 20110716212459) do
-=======
-ActiveRecord::Schema.define(:version => 20110716191305) do
->>>>>>> master
 
   create_table "posts", :force => true do |t|
     t.string   "title"
@@ -42,6 +38,7 @@ ActiveRecord::Schema.define(:version => 20110716191305) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "cached_slug"
   end
 
   create_table "tagships", :force => true do |t|

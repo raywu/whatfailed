@@ -1,13 +1,12 @@
 <table width="50%">
 
-<% user = "Joe Smith" %>
 <% @posts.each do |post| %>
   <tr>
     <td>
 		<span id="title"><%= title(post) %></span>
 		<span id="url"><%= link(post) %></span>
 		<div id="info">
-			Posted by <%= link_to user, "#" %>
+			Posted by <%= post.user.name %>
 			on <%= post.created_at.strftime("%b %d, %Y") %>
 			| <%= link_to 'Comment', post_path(post, :anchor => "disqus_thread"), 'data-disqus-identifier' => post.id %></
 		</div>
