@@ -1,5 +1,6 @@
 class Post < ActiveRecord::Base
   attr_accessible :title, :url, :content, :tag_tokens, :tags
+  has_friendly_id :title, :use_slug => true
   has_many :tagships
   has_many :tags, :through => :tagships
   attr_reader :tag_tokens
