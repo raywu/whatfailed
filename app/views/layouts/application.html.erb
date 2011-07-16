@@ -22,6 +22,11 @@
 
 <div id="header">
 	WhatFailed.Us - A Collection of Startup Stories
+	 <span id="nav">
+	   <span id="nav-item"><%= link_to 'Latest', "/" %></span>
+	   <span id="nav-item"><%= link_to 'New', new_post_path %></span>
+	   <span id="nav-item"><%= link_to 'Tags', tags_path %></span>
+	  </span>
 	<div id="user_nav">
 		<% if current_user %>
 		  Welcome <%= current_user.name %>!

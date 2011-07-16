@@ -1,21 +1,76 @@
 body {
-  background-color: #eee;
   padding: 0px 200px 0px 200px;
   font-family: arial;
+
+  /* Gradient Background */
+  background: rgb(252,255,244); /* Old browsers */
+  background: -moz-linear-gradient(top, rgba(252,255,244,1) 0%, rgba(223,229,215,1) 40%, rgba(179,190,173,1) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(252,255,244,1)), color-stop(40%,rgba(223,229,215,1)), color-stop(100%,rgba(179,190,173,1))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, rgba(252,255,244,1) 0%,rgba(223,229,215,1) 40%,rgba(179,190,173,1) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, rgba(252,255,244,1) 0%,rgba(223,229,215,1) 40%,rgba(179,190,173,1) 100%); /* Opera11.10+ */
+  background: -ms-linear-gradient(top, rgba(252,255,244,1) 0%,rgba(223,229,215,1) 40%,rgba(179,190,173,1) 100%); /* IE10+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfff4', endColorstr='#b3bead',GradientType=0 ); /* IE6-9 */
+  background: linear-gradient(top, rgba(252,255,244,1) 0%,rgba(223,229,215,1) 40%,rgba(179,190,173,1) 100%); /* W3C */
+}
+
+a {
+  color: #000;
+  text-decoration: none;
 }
 
 #header {
-  padding: 4px 15px 4px 15px;
+  color: #fff;
+  padding: 8px 15px 8px 15px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   background-color: #ccc;
   font-size: 16px;	
   font-weight: bold;
+
+  /* Gradient Background */
+  background: rgb(169,3,41); /* Old browsers */
+  background: -moz-linear-gradient(top, rgba(169,3,41,1) 0%, rgba(143,2,34,1) 44%, rgba(109,0,25,1) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(169,3,41,1)), color-stop(44%,rgba(143,2,34,1)), color-stop(100%,rgba(109,0,25,1))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, rgba(169,3,41,1) 0%,rgba(143,2,34,1) 44%,rgba(109,0,25,1) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, rgba(169,3,41,1) 0%,rgba(143,2,34,1) 44%,rgba(109,0,25,1) 100%); /* Opera11.10+ */
+  background: -ms-linear-gradient(top, rgba(169,3,41,1) 0%,rgba(143,2,34,1) 44%,rgba(109,0,25,1) 100%); /* IE10+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a90329', endColorstr='#6d0019',GradientType=0 ); /* IE6-9 */
+  background: linear-gradient(top, rgba(169,3,41,1) 0%,rgba(143,2,34,1) 44%,rgba(109,0,25,1) 100%); /* W3C */
+}
+
+#nav {
+  margin: 2px;
+}
+
+#header a {
+  color: #fff;
+}
+
+
+#nav-item {
+  margin: 2px;
+  font-size: 14px;
+  padding: 3px 8px 3px 8px;
+  border-radius: 10px;
+  color: #444;
+  /* Gradient Background */
+  background: rgb(238,238,238); /* Old browsers */
+  background: -moz-linear-gradient(top, rgba(238,238,238,1) 0%, rgba(163,163,163,1) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(238,238,238,1)), color-stop(100%,rgba(163,163,163,1))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, rgba(238,238,238,1) 0%,rgba(163,163,163,1) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, rgba(238,238,238,1) 0%,rgba(163,163,163,1) 100%); /* Opera11.10+ */
+  background: -ms-linear-gradient(top, rgba(238,238,238,1) 0%,rgba(163,163,163,1) 100%); /* IE10+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#a3a3a3',GradientType=0 ); /* IE6-9 */
+  background: linear-gradient(top, rgba(238,238,238,1) 0%,rgba(163,163,163,1) 100%); /* W3C */
+}
+
+#nav-item a {
+  color: #444;
 }
 
 #user_nav {
-	float: right;
-	font-weight: normal;
+  float: right;
+  font-weight: normal;
 }
 
 
@@ -28,10 +83,6 @@ body {
 
 #notice {
   color: green;
-}
-
-a {
-  color: #000;
 }
 
 .field_with_errors {
@@ -66,20 +117,22 @@ a {
 }
 
 #title a {
-  font-size: 16px;
+  font-size: 18px;
   text-decoration: none;
 }
 
 #info {
-  font-size: 10px;
+  font-size: 12px;
   color: #888;
 }
 
+
+#tags {
+    margin-top: 3px;
+}
 #tag a {
 	padding: 2px;
-	font-size: 10px;
-	background: #ddd;
-	border-radius: 5px;
+	font-size: 12px;
 	text-decoration: none;
 }
 
