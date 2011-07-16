@@ -73,6 +73,10 @@ div.field, div.actions {
 	text-decoration: none;
 }
 
+#user_nav {
+	padding: 5px 0px 15px 0px;
+}
+
 #title {
 	font-weight: bold;
 }
@@ -83,4 +87,10 @@ div.field, div.actions {
 
 td {
 	padding-bottom: 10px;
+}
+
+#post_submit {
+	border: 1px solid #8496BA;
+	padding: 8px;
+	background: #EFF2F7;
 }

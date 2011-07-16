@@ -1,9 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Title:</b>
-  <%= @post.title %>
-</p>
+<h1><%= @post.title %></h1>
 
 <p>
   <% if @post.url.blank? == false %>
@@ -11,25 +8,23 @@
   <% end %>
 </p>
 
-<p>
-  <% if @post.content.blank? == false %>
-  <b><%= 'Content:' %></b>
-  <%= @post.content %>
-  <% end %>
-</p>
+<% if @post.content.blank? == false %>
+  <p><%= @post.content %></p>
+<% end %>
 
-<p>
-	<%= form_for(@post) do |f| %>
-	<div class="field">
-	<b><%= f.label :tag_tokens, "Tags:" %><b/>
-	<%= f.text_field :tag_tokens, "data-pre" => @post.tags.map(&:attributes).to_json %>
-	<%= f.submit 'Update' %>
-	<% end %>
-</p>
+<%= form_for(@post) do |f| %>
+<table id="tags-editor">
+<tr>
+	<td><%= f.text_field :tag_tokens, "data-pre" => @post.tags.map(&:attributes).to_json %></td>
+	<td><%= f.submit 'Update' %></td>
+</tr>
+		
+</table>
+<% end %>
 
-<p>
+<div id="buttons">
 <%= render 'comment' %>
-</p>
+</div>
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>
