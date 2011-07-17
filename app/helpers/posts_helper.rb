@@ -2,7 +2,7 @@ module PostsHelper
   
 # todo: Check for http, if not include it  
 
-  def title(post)
+  def header(post)
     if post.url.blank?
       link_to post.title, post
     else

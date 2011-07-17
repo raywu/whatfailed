@@ -3,7 +3,7 @@
 <% @posts.each do |post| %>
   <tr>
     <td>
-		<span id="title"><%= title(post) %></span>
+		<span id="title"><%= header(post) %></span>
 		<span id="url"><%= link(post) %></span>
 		<div id="info">
 			Posted by <%= post.user.name %>
@@ -24,10 +24,6 @@
 
 <br/>
 
-<p>
-	<%= will_paginate @posts %>	
-</p>
+<%= will_paginate @posts %>
 
-<p>
-	<%= page_entries_info @posts %>
-</p>
+<%= page_entries_info @posts %>
