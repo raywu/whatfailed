@@ -20,7 +20,7 @@ a {
 
 #header {
   color: #fff;
-  padding: 8px 15px 8px 15px;
+  padding: 8px 4px 8px 15px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   background-color: #ccc;
@@ -39,7 +39,7 @@ a {
 }
 
 #nav {
-  margin: 2px;
+  margin: 4px;
 }
 
 #header a {
@@ -47,8 +47,8 @@ a {
 }
 
 
-#nav-item {
-  margin: 2px;
+#nav-button {
+  margin: 4px;
   font-size: 14px;
   padding: 3px 8px 3px 8px;
   border-radius: 10px;
@@ -64,11 +64,12 @@ a {
   background: linear-gradient(top, rgba(238,238,238,1) 0%,rgba(163,163,163,1) 100%); /* W3C */
 }
 
-#nav-item a {
+#nav-button a {
   color: #444;
 }
 
 #user_nav {
+  font-size: 12px;
   float: right;
   font-weight: normal;
 }

@@ -14,6 +14,8 @@ gem 'jquery-rails'
 
 gem 'friendly_id'
 
+gem 'formtastic'
+
 group :development do
   gem 'rspec-rails', '2.6.1'
 end
