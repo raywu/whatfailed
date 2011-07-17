@@ -2,8 +2,8 @@
 <head>
   <title><%= content_for?(:title) ? yield(:title) : "WhatFailed.us" %></title>
   </head>
-  <%= stylesheet_link_tag :all, "token-input-facebook" %>
-  <%= javascript_include_tag :defaults, "jquery.tokeninput" %>
+  <%= stylesheet_link_tag :all %>
+  <%= javascript_include_tag :all %>
   <%= csrf_meta_tag %>
   <%= yield(:head) %>
 	<script type="text/javascript">
@@ -22,19 +22,26 @@
 
 <div id="header">
 	WhatFailed.Us - A Collection of Startup Stories
+	 <span id="nav">
+	   <span id="nav-button"><%= link_to 'Latest', "/" %></span>
+	   <span id="nav-button"><%= link_to 'New', new_post_path %></span>
+	   <span id="nav-button"><%= link_to 'Tags', tags_path %></span>
+	  </span>
 	<div id="user_nav">
 		<% if current_user %>
-		  Welcome <%= current_user.name %>!
-		  <%= link_to "Sign Out", signout_path %>
+		  Signed in as <%= current_user.name %>
+		  <span id="nav-button"><%= link_to "Sign Out", signout_path %></span>
 		<% else %>
-		  [<%= link_to "Sign in with Twitter", "/auth/twitter" %>]
-		  [<%= link_to "Sign in with Facebook", "/auth/facebook" %>]
+		  <span id="nav-button">[<%= link_to "Sign in with Twitter", "/auth/twitter" %></span>
+		  <span id="nav-button"><%= link_to "Sign in with Facebook", "/auth/facebook" %></span>
 		<% end %>
 	</div>
 </div>
 
 <div id="container">
-
+<% if !yield(:title).empty? %>
+	<h1><%= yield(:title) %></h1>
+<% end %>
 <%= yield %>
 </div>
 

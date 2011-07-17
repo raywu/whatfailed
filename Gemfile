@@ -2,7 +2,6 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.0.9'
 gem 'autotest'
-gem 'scaffoldhub'
 gem "will_paginate", "~> 3.0.pre2"
 gem 'omniauth'
 
@@ -13,6 +12,8 @@ gem 'sqlite3'
 gem 'jquery-rails'
 
 gem 'friendly_id'
+
+gem 'formtastic'
 
 group :development do
   gem 'rspec-rails', '2.6.1'

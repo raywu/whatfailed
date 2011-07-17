@@ -8,12 +8,16 @@ class Post < ActiveRecord::Base
   cattr_reader :per_page
   @@per_page = 4
   
-  def tag_tokens=(ids)
-    self.tag_ids = ids.split(",")
-  end
-  
   validates :title, :presence => true
   validates :url, :allow_blank => true,
                   :format => { :with => /^(http|https)/, :message => "needs to start with http:// or https://"}
+                  
+ def tag_tokens=(ids)
+   self.tag_ids = ids.split(",")
+ end
+ 
+ def belongs_to?(user)
+   (self.user_id == user.id)? "true" : "false"
+ end
 
 end
