@@ -4,12 +4,8 @@
 
 <% @tags.each do |tag| %>
   <tr>
-    <td><%= link_to tag.name, tag %></td>
-	<td><%= tag.posts.count.to_s + " posts" %></td>
+    <td><%= link_to tag.name, tag %> (<%= tag.posts.count.to_s + " posts" %>)</td>
+    <td></td>
   </tr>
 <% end %>
 </table>
-
-<br />
-
-<%= link_to 'Back to Home Page', posts_path %>
