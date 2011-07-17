@@ -2,8 +2,10 @@
 
 <h1><%= @post.title %></h1>
 
-<% if @post.belongs_to?(current_user) %>
-	<%= link_to "(edit)", edit_post_path(@post) %>
+<% if current_user %>
+	<% if @post.belongs_to?(current_user) %>
+		<%= link_to "(edit)", edit_post_path(@post) %>
+	<% end %>
 <% end %>
 
 <p>

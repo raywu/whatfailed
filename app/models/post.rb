@@ -15,9 +15,8 @@ class Post < ActiveRecord::Base
  def tag_tokens=(ids)
    self.tag_ids = ids.split(",")
  end
- 
- def belongs_to?(user)
-   (self.user_id == user.id)? "true" : "false"
- end
 
+ def belongs_to?(user)
+   self.user_id == user.id
+ end
 end
