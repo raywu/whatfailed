@@ -5,17 +5,15 @@
     <td>
 		<span id="title"><%= header(post) %></span>
 		<span id="url"><%= link(post) %></span>
+		<span id="tags">
+			<% post.tags.each do |tag| %>
+				<span id="tag"><%= link_to "##{tag.name}", tag %></span>
+			<% end %>
+		</span>
 		<div id="info">
 			Posted by <%= post.user.name %>
 			on <%= post.created_at.strftime("%b %d, %Y") %>
-			| <%= link_to 'Comment', post_path(post, :anchor => "disqus_thread"), 'data-disqus-identifier' => post.id %></
-		</div>
-		<div id="tags">
-			<% num = post.tags.count; i = 1 %>
-			<% post.tags.each do |tag| %>
-				<span id="tag"><%= link_to "##{tag.name}", tag %></span>
-			<% if i < num %>&bull;<% i += 1 ; end %>
-			<% end %>
+			| <%= link_to 'Comment', post_path(post, :anchor => "disqus_thread"), 'data-disqus-identifier' => post.id %>
 		</div>
 	</td>
   </tr>
