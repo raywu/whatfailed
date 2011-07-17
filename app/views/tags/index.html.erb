@@ -1,15 +1,18 @@
 <% title 'Tags' %>
 
-<table>
+<table width="50%">
+
+<tr>
+	<td><b>Name</b></td>
+	<td><b>Posts</b></td>
+	<td><b>Last Submission</b></td>
+</tr>
 
 <% @tags.each do |tag| %>
   <tr>
     <td><%= link_to tag.name, tag %></td>
-	<td><%= tag.posts.count.to_s + " posts" %></td>
+	<td><%= tag.posts.count %></td>
+    <td><%= if tag.posts.last then tag.posts.last.created_at.strftime("%b %d %I:%M %p") end %></td>
   </tr>
 <% end %>
 </table>
-
-<br />
-
-<%= link_to 'Back to Home Page', posts_path %>
