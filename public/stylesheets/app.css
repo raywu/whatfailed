@@ -125,14 +125,19 @@ a {
 
 #info {
   font-size: 12px;
-  color: #888;
+  color: #777;
 }
 
 
 #tags {
-    margin-top: 3px;
+    margin: 2px;
 }
+
 #tag a {
+    color: #777;
+    font-size: 12px;
+    background: #eee;
+    border-radius: 5px;
 	padding: 2px;
 	font-size: 12px;
 	text-decoration: none;
