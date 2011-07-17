@@ -1,6 +1,6 @@
 module LayoutHelper
   def title(page_title)
-    content_for(:title) { raw ("<h1>#{page_title.to_s}</h1>") }
+    content_for(:title) { h(page_title.to_s) }
   end
 
   def show_title?

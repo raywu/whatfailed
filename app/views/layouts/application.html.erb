@@ -39,7 +39,9 @@
 </div>
 
 <div id="container">
-<%= yield(:title) %>
+<% if !yield(:title).empty? %>
+	<h1><%= yield(:title) %></h1>
+<% end %>
 <%= yield %>
 </div>
 

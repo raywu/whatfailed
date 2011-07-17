@@ -1,7 +1,7 @@
 <%= semantic_form_for @post do |f| %>
 	<%= f.inputs do %>
 	  <%= f.input :title %>
-	  <%= f.input :url %>
+	  <%= f.input :url, label: "URL" %>
 	  <%= f.input :content %>
 	  <%= f.label :tag_tokens, "Tags" %>
 	  <div style="float: right; margin: 10px 30px 10px 10px;">
