@@ -1,6 +1,10 @@
 <p id="notice"><%= notice %></p>
 
 <h1><%= @post.title %></h1>
+<p>
+	Posted by <%= @post.user.name %>
+	on <%= @post.created_at.strftime("%b %d, %Y") %>
+</p>
 
 <% if current_user %>
 	<% if @post.belongs_to?(current_user) %>
@@ -15,7 +19,7 @@
 </p>
 
 <% if @post.content.blank? == false %>
-  <p><%= @post.content %></p>
+  <%= raw RDiscount.new(@post.content).to_html %>
 <% end %>
 
 <%= form_for(@post) do |f| %>

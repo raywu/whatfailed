@@ -11,7 +11,7 @@ gem 'jquery-rails'
 gem 'friendly_id'
 gem "will_paginate", "~> 3.0.pre2"
 gem 'formtastic'
-gem 'RedCloth'
+gem 'rdiscount'
 
 
 

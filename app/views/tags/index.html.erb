@@ -1,11 +1,11 @@
 <% title 'Tags' %>
 
-<table width="50%">
+<table width="100%">
 
 <tr>
 	<td><b>Name</b></td>
-	<td><b>Posts</b></td>
-	<td><b>Last Submission</b></td>
+	<td><b>Submissions</b></td>
+	<td><b>Latest</b></td>
 </tr>
 
 <% @tags.each do |tag| %>
@@ -13,6 +13,8 @@
     <td><%= link_to tag.name, tag %></td>
 	<td><%= tag.posts.count %></td>
     <td><%= if tag.posts.last then tag.posts.last.created_at.strftime("%b %d %I:%M %p") end %></td>
+    <td><%= if tag.posts.last then tag.posts.last.user.name end %></td>
+	<td><%= if tag.posts.last then link_to(tag.posts.last.title,tag.posts.last) end %></td>
   </tr>
 <% end %>
 </table>
