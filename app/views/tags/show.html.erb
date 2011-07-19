@@ -16,15 +16,6 @@
   </tr>
 <% end %>
 </table>
-<p>
-	<%= will_paginate @posts %>	
-</p>
 
-<p>
-	<%= page_entries_info @posts %>
-</p>
-
-<br/>
-
-<%= link_to 'Back to Tag Index', tags_path %> | 
-<%= link_to 'Back to Home Page', posts_path %>
+<p><%= will_paginate @posts %></p>
+<p><%= page_entries_info @posts %></p>
