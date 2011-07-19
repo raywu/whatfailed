@@ -42,6 +42,11 @@
 <% if !yield(:title).empty? %>
 	<h1><%= yield(:title) %></h1>
 <% end %>
+
+<%- flash.each do |type, msg| -%>
+		<div class="msg" id="<%= type %>"><%= msg %></div>
+<%- end -%>
+
 <%= yield %>
 </div>
 

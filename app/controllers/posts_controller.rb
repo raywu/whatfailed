@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  before_filter :authed, :except => [:index, :show]
+  
   def index
     @posts = Post.all
     @posts = Post.paginate :page => params[:page], :order => 'created_at DESC'
