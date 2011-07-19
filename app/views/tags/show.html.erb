@@ -1,13 +1,21 @@
 <% title @tag.name %>
 
-<p id="notice"><%= notice %></p>
+<table width="50%">
 
-<p>
-  <% @posts.each do |post| %>
-  <div><%= link_to post.title, post %></div>
-  <% end %>
-</p>
-
+<% @posts.each do |post| %>
+  <tr>
+    <td>
+    <span id="title"><%= header(post) %></span>
+	<span id="url"><%= link(post) %></span>
+    <div id="info">
+		Posted by <%= post.user.name %>
+		on <%= post.created_at.strftime("%b %d, %Y") %>
+		| <%= link_to 'Comment', post_path(post, :anchor => "disqus_thread"), 'data-disqus-identifier' => post.id %>
+	</div>
+	</td>
+  </tr>
+<% end %>
+</table>
 <p>
 	<%= will_paginate @posts %>	
 </p>
