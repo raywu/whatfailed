@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110717211909) do
+ActiveRecord::Schema.define(:version => 20110716212459) do
 
   create_table "posts", :force => true do |t|
     t.string   "title"
@@ -20,14 +20,6 @@ ActiveRecord::Schema.define(:version => 20110717211909) do
     t.datetime "updated_at"
     t.string   "cached_slug"
     t.integer  "user_id"
-  end
-
-  create_table "sessions", :force => true do |t|
-    t.integer  "user_id"
-    t.string   "provider"
-    t.string   "uid"
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
   create_table "slugs", :force => true do |t|
@@ -63,7 +55,6 @@ ActiveRecord::Schema.define(:version => 20110717211909) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "cached_slug"
-    t.string   "email"
   end
 
 end
