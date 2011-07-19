@@ -1,8 +1,8 @@
 <html>
 <head>
   <title><%= content_for?(:title) ? yield(:title) : "WhatFailed.us" %></title>
-  <%= stylesheet_link_tag :all %>
-  <%= javascript_include_tag :all %>
+  <%= stylesheet_link_tag :all, :cache => true %>
+  <%= javascript_include_tag :all, :cache => true %>
   <%= csrf_meta_tag %>
   <%= yield(:head) %>
 	<script type="text/javascript">
