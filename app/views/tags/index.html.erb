@@ -4,17 +4,17 @@
 
 <tr>
 	<td><b>Name</b></td>
-	<td><b>Submissions</b></td>
-	<td><b>Latest</b></td>
+	<td><b>Latest Submission</b></td>
 </tr>
 
 <% @tags.each do |tag| %>
   <tr>
-    <td><%= link_to tag.name, tag %></td>
-	<td><%= tag.posts.count %></td>
-    <td><%= if tag.posts.last then tag.posts.last.created_at.strftime("%b %d %I:%M %p") end %></td>
-    <td><%= if tag.posts.last then tag.posts.last.user.name end %></td>
-	<td><%= if tag.posts.last then link_to(tag.posts.last.title,tag.posts.last) end %></td>
+    <td><%= link_to tag.name, tag %> (<%= tag.posts.count %>)</td>
+    <td><%= if tag.posts.last then relative_time(tag.posts.last.created_at) end %></td>
+	<td><%  if tag.posts.last %>
+		"<%= link_to(tag.posts.last.title,tag.posts.last) %>" by
+		<%= tag.posts.last.user.name %><% end %>
+	</td>
   </tr>
 <% end %>
 </table>
