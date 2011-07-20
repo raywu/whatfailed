@@ -11,10 +11,7 @@ gem 'jquery-rails'
 
 gem 'friendly_id'
 gem "will_paginate", "~> 3.0.pre2"
-gem 'formtastic'
 gem 'rdiscount'
-
-
 
 group :development do
   gem 'rspec-rails', '2.6.1'

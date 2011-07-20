@@ -13,11 +13,6 @@ body {
   background: linear-gradient(top, rgba(252,255,244,1) 0%,rgba(223,229,215,1) 40%,rgba(179,190,173,1) 100%); /* W3C */
 }
 
-a {
-  color: #000;
-  text-decoration: none;
-}
-
 #header {
   color: #fff;
   padding: 8px 4px 8px 15px;
@@ -38,15 +33,27 @@ a {
   background: linear-gradient(top, rgba(169,3,41,1) 0%,rgba(143,2,34,1) 44%,rgba(109,0,25,1) 100%); /* W3C */
 }
 
-#nav {
-  display: inline;
-  margin: 4px;
-}
-
 #header a {
   color: #fff;
 }
 
+#container {
+  background-color: #fff;
+  padding: 15px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+a {
+  color: #555;
+}
+
+/** nav **/
+
+#nav {
+  display: inline;
+  margin: 4px;
+}
 
 #nav-button {
   margin: 4px;
@@ -67,20 +74,20 @@ a {
 
 #nav-button a {
   color: #444;
+  text-decoration: none;
 }
 
-#user_nav {
+#nav-user {
   font-size: 12px;
   float: right;
   font-weight: normal;
 }
 
 
-#container {
-  background-color: #fff;
-  padding: 15px;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+/** Forms **/
+
+#post {
+	margin: 0px 0px 10px 0px;
 }
 
 .msg {
@@ -99,6 +106,7 @@ a {
 }
 
 #title a {
+  color: #000;
   font-size: 18px;
   text-decoration: none;
 }
@@ -111,6 +119,7 @@ a {
 
 #tags {
     margin: 2px;
+	display: inline;
 }
 
 #tag a {
@@ -143,4 +152,35 @@ td {
 
 h1 {
   margin-top: 0px;
+}
+
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#error_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  margin-bottom: 0px;
+  background-color: #c00;
+  color: #fff;
+}
+
+#error_explanation ul li {
+  font-size: 12px;
+  list-style: square;
 }
