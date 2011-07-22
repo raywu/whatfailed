@@ -1,20 +1,10 @@
 <html>
 <head>
   <title><%= content_for?(:title) ? yield(:title) : "WhatFailed.us" %></title>
-  </head>
   <%= stylesheet_link_tag :all %>
   <%= javascript_include_tag :all %>
   <%= csrf_meta_tag %>
   <%= yield(:head) %>
-	<script type="text/javascript">
-    var disqus_shortname = 'raywu'
-    (function () {
-        var s = document.createElement('script'); s.async = true;
-        s.type = 'text/javascript';
-        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
-        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-    }());
-  </script>
 </head>
 
 <body>
@@ -27,7 +17,7 @@
 	   <span id="nav-button"><%= link_to 'Submit', new_post_path %></span>
 	   <span id="nav-button"><%= link_to 'Tags', tags_path %></span>
 	  </div>
-	<div id="user_nav">
+	<div id="nav-user">
 		<% if current_user %>
 		  Signed in as <%= current_user.name %>
 		  <span id="nav-button"><%= link_to "Sign Out", signout_path %></span>
@@ -42,6 +32,11 @@
 <% if !yield(:title).empty? %>
 	<h1><%= yield(:title) %></h1>
 <% end %>
+
+<%- flash.each do |type, msg| -%>
+		<div class="msg" id="<%= type %>"><%= msg %></div>
+<%- end -%>
+
 <%= yield %>
 </div>
 

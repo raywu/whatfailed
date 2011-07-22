@@ -1,16 +1,15 @@
-<p id="notice"><%= notice %></p>
-
 <h1><%= @post.title %></h1>
 <p>
-	Posted by <%= @post.user.name %>
-	on <%= @post.created_at.strftime("%b %d, %Y") %>
-</p>
+	Posted by <%= @post.user.name %> <%= time_ago_in_words(@post.created_at) %> ago
 
 <% if current_user %>
 	<% if @post.belongs_to?(current_user) %>
-		<%= link_to "(edit)", edit_post_path(@post) %>
+		( <%= link_to "edit", edit_post_path(@post) %> ,
+		<%= link_to "delete", @post, :confirm => 'Are you sure?', :method => :delete %> )
 	<% end %>
 <% end %>
+
+</p>
 
 <p>
   <% if @post.url.blank? == false %>
@@ -25,8 +24,13 @@
 <%= form_for(@post) do |f| %>
 <table id="tags-editor">
 <tr>
-	<td><%= f.text_field :tag_tokens, "data-pre" => @post.tags.map(&:attributes).to_json %></td>
-	<td><%= f.submit 'Update' %></td>
+	<% if current_user %>
+		<td><%= f.text_field :tag_tokens, "data-pre" => @post.tags.map(&:attributes).to_json %></td>
+		<td><%= f.submit 'Update' %></td>
+	<% else %>
+		<td><%= f.text_field :tag_tokens, "data-pre" => @post.tags.map(&:attributes).to_json, :disabled => true %></td>
+		<td><%= f.submit 'Please Login to Update', :disabled => true %></td>
+	<% end %>
 </tr>
 
 </table>

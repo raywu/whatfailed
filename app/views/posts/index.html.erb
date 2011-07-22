@@ -1,27 +1,32 @@
-<table width="50%">
+<% content_for :head do %>
+<script type="text/javascript">
+var disqus_shortname = 'raywu'
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+<% end %>
 
 <% @posts.each do |post| %>
-  <tr>
-    <td>
-		<span id="title"><%= header(post) %></span>
-		<span id="url"><%= link(post) %></span>
-		<span id="tags">
-			<% post.tags.each do |tag| %>
-				<span id="tag"><%= link_to "##{tag.name}", tag %></span>
-			<% end %>
-		</span>
-		<div id="info">
-			Posted by <%= post.user.name %>
-			on <%= post.created_at.strftime("%b %d, %Y") %>
-			| <%= link_to 'Comment', post_path(post, :anchor => "disqus_thread"), 'data-disqus-identifier' => post.id %>
-		</div>
-	</td>
-  </tr>
+<div id="post">
+	<span id="title"><%= header(post) %></span>
+	<span id="url"><%= link(post) %></span>
+	<div id="tags">
+		<% post.tags.each do |tag| %>
+			<span id="tag"><%= link_to "##{tag.name}", tag %></span>
+		<% end %>
+	</div>
+	<div id="info">
+		Posted by <%= post.user.name %> <%= time_ago_in_words(post.created_at) %> ago
+		[ <%= link_to 'Comment', post_path(post, :anchor => "disqus_thread"), 'data-disqus-identifier' => post.id %> ]
+	</div>
+</div>
 <% end %>
-</table>
 
 <br/>
 
-<%= will_paginate @posts %>
-
-<%= page_entries_info @posts %>
+<p><%= will_paginate @posts %></p>
+<p><%= page_entries_info @posts %></p>

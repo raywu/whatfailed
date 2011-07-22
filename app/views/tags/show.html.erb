@@ -1,22 +1,23 @@
 <% title @tag.name %>
 
-<p id="notice"><%= notice %></p>
+<% @posts.each do |post| %>
 
-<p>
-  <% @posts.each do |post| %>
-  <div><%= link_to post.title, post %></div>
-  <% end %>
-</p>
+<div id="title">
+	<%= header(post) %> <span id="link"<%= link(post) %></span>
+</div>
 
-<p>
-	<%= will_paginate @posts %>	
-</p>
+<div id="tags">
+	<% post.tags.each do |tag| %>
+		<span id="tag"><%= link_to "##{tag.name}", tag %></span>
+	<% end %>
+</dib>
 
-<p>
-	<%= page_entries_info @posts %>
-</p>
+<div id="info">
+	Posted by <%= post.user.name %> <%= time_ago_in_words(post.created_at) %> ago
+	[ <%= link_to 'Comment', post_path(post, :anchor => "disqus_thread"), 'data-disqus-identifier' => post.id %> ]
+</div>
 
-<br/>
+<% end %>
 
-<%= link_to 'Back to Tag Index', tags_path %> | 
-<%= link_to 'Back to Home Page', posts_path %>
+<p><%= will_paginate @posts %></p>
+<p><%= page_entries_info @posts %></p>
