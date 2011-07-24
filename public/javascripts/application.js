@@ -1,5 +1,5 @@
-// Place your application-specific JavaScript functions and classes here
-// This file is automatically included by javascript_include_tag :defaults
+// jquery tags
+
 $(function() {
 	$("#post_tag_tokens").tokenInput("/tags.json", {
 		// crossDomain: false,
@@ -7,9 +7,15 @@ $(function() {
 		theme: "facebook"
 	});
 });
-// The following is from http://frumbert.blogspot.com/2011/02/overcoming-disquss-load-time-using.html
-// $(document).ready(function () {
-//     $("div[id$=_commentSystem]").css({ padding: ".5em" }).appear(function () {
-//         $.getScript("http://" + disqus_shortname + ".disqus.com/embed.js");
-//     });
-// });
+
+// Disqus
+
+<script type="text/javascript">
+var disqus_shortname = 'raywu'
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
