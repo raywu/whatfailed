@@ -21,7 +21,7 @@ var disqus_shortname = 'raywu'
 	</div>
 	<div id="info">
 		Posted by <%= post.user.name %> <%= time_ago_in_words(post.created_at) %> ago
-		[ <%= link_to 'Comment', post_path(post, :anchor => "disqus_thread"), 'data-disqus-identifier' => post.id %> ]
+		[ <%= link_to 'Comment', post_path(post, :anchor => "disqus_thread"), 'data-disqus-identifier' => "wf-"+post.slug.name %> ]
 	</div>
 </div>
 <% end %>
