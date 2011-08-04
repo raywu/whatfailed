@@ -4,6 +4,7 @@ Whatfailed::Application.routes.draw do
   
   # omniauth
     match "/auth/:provider/callback" => "sessions#create", :as => :signin
+    match "/register" => "sessions#register", :as => :registration 
     match "/signout" => "sessions#destroy", :as => :signout
   
   # posts

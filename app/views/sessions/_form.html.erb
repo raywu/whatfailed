@@ -1,4 +1,4 @@
-<%= form_for @user do |u| %>
+<%= form_for(:session, :url => :registrations ) do |u| %>
 	<p><%= u.text_field :email, label: "Update Email" %></p>
 	<p><%= u.submit %></p>
 <% end %>
