@@ -1,12 +1,15 @@
+<html>
 <head>
-<title><%= content_for?(:title) ? yield(:title) : "WhatFailed.us" %></title>
-<%= stylesheet_link_tag :all %>
-<%= javascript_include_tag :all %>
-<%= csrf_meta_tag %>
-<%= yield(:head) %>
+  <title><%= content_for?(:title) ? yield(:title) : "WhatFailed.us" %></title>
+  <%= stylesheet_link_tag :all %>
+  <%= javascript_include_tag :all %>
+  <%= csrf_meta_tag %>
+  <%= yield(:head) %>
 </head>
 
 <body>
+	
+
 <div id="header">
 	WhatFailed.Us - A Collection of Startup Stories
 	 <div id="nav">
@@ -36,4 +39,6 @@
 
 <%= yield %>
 </div>
+
 </body>
+</html>

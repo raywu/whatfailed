@@ -1,4 +1,5 @@
-// tag tokens plugin
+// jquery tags
+
 $(function() {
 	$("#post_tag_tokens").tokenInput("/tags.json", {
 		// crossDomain: false,
@@ -6,8 +7,10 @@ $(function() {
 		theme: "facebook"
 	});
 });
+
 // Disqus
 
+<script type="text/javascript">
 var disqus_shortname = 'raywu'
 (function () {
     var s = document.createElement('script'); s.async = true;
@@ -15,3 +18,4 @@ var disqus_shortname = 'raywu'
     s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
     (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
 }());
+</script>
