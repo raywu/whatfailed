@@ -20,9 +20,14 @@ class SessionsController < ApplicationController
     respond_to do |format|
       if @user.update_attributes(params[:email])
         format.html { render 'sessions/register' }
+        format.xml { head :ok }
+        if @user.save
+          redirect_to root_url, :notice => "Signed in!"
+        end
       end
     end
   end
+
     
   
   def destroy
