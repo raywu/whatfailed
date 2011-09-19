@@ -3,8 +3,8 @@ class Post < ActiveRecord::Base
   has_friendly_id :title, :use_slug => true
   has_many :tagships
   has_many :tags, :through => :tagships
-  belongs_to :user
   attr_reader :tag_tokens
+  belongs_to :user
   cattr_reader :per_page
   @@per_page = 4
   
