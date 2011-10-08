@@ -1,7 +1,7 @@
 <table>
   <tr>
     <td>
-      <a href="https://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="whatfailed">Tweet</a><script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
+		<%= tweet_button(:url => post_url(@posts), :text => "'#{@post.title}' #startupfailure", :count => "none" )%>
     </td>
     <td>
       <div id="fb-root"></div>

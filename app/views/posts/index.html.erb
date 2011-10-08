@@ -3,6 +3,9 @@
 	<table>
 	<tr>
 		<td>
+			<%= tweet_button(:url => post_url(post), :text => "'#{post.title}' #startupfailure", :count => "none" )%>
+		</td>
+		<td>
 			<span id="title"><%= header(post) %></span>
 			<span id="url"><%= link(post) %></span>
 			<div id="tags">
@@ -14,9 +17,6 @@
 				Posted by <%= post.user.name %> <%= time_ago_in_words(post.created_at) %> ago
 				[ <%= link_to '{num} Comment', post_path(post, :anchor => "disqus_thread") %> ]
 			</div>
-		</td>
-		<td>
-			<%= render 'share' %>
 		</td>	
 	</tr>
 	</table>
