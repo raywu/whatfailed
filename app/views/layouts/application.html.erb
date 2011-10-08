@@ -1,16 +1,16 @@
 <html>
-<head>
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+ <meta property="fb:app_id"      content="240443122674939"> 
+ <meta property="og:type"        content="article"> 
+ <meta property="og:url"         content="http://stormy-journey-175.heroku.com/"> 
+ <meta property="og:title"       content="WhatFailed.us"> 
+ <meta property="og:description" content="a collection of startup stories"> 
+ <meta property="og:image"       content="http://ogp.me/logo.png">
   <title><%= content_for?(:title) ? yield(:title) : "WhatFailed.us" %></title>
   <%= stylesheet_link_tag "app", "token-input-facebook" %>
   <%= javascript_include_tag :defaults, "jquery.tokeninput" %>
   <%= csrf_meta_tag %>
   <%= yield(:head) %>
-  <meta property="og:title" content="WhatFailed.us" />
-  <meta property="og:type" content="article" />
-  <meta property="og:url" content="http://www.symbian-freak.com/images/news/07/11/spaceinvaders.gif" />
-  <meta property="og:image" content="" />
-  <meta property="og:site_name" content="something new" />
-  <meta property="fb:app_id" content="240443122674939" />
 </head>
 
 <body>
