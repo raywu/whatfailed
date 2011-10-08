@@ -190,16 +190,14 @@ h1 {
 }
 #main{
 	float:left;
-	width:520px;
+	width:620px;
 }
 #sidebar{
-	float:left;
+	float:right;
 	width:320px;
 	margin-left:20px
 }
 
 #share{
-	float:left
-	width:80px;
-	margin-right:20px;
+	clear:both;
 }

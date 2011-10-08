@@ -1,16 +1,7 @@
 <div id="content">
-	<div id="main">
+	<div id="main" style='background:red'>
 <% @posts.each do |post| %>
-<div id="post">
-	<table>
-	<tr>
-		<div id="share">
-		<td>
-				<%= tweet_button(:url => post_url(post), :text => "'#{post.title}' #startuplessonslearned", :count => "horizontal" )%>
-				<div class="fb-like" data-href="<%= post_url(post) %>" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false"></div>
-		</td>
-		</div>
-		<td>
+<div id="post" style='background:yellow;float:left;clear:both;width:80%;'>
 			<span id="title"><%= header(post) %></span>
 			<span id="url"><%= link(post) %></span>
 			<div id="tags">
@@ -21,14 +12,17 @@
 			<div id="info">
 				Posted by <%= post.user.name %> <%= time_ago_in_words(post.created_at) %> ago
 				[ <%= link_to '{num} Comment', post_path(post, :anchor => "disqus_thread") %> ]
-			</div>
-		</td>	
-	</tr>
-	</table>
-</div>
+			</div>	
+</div><!-- .post -->
+
+<div class='social' style='background:green;float:right;width:20%'>
+							<%= tweet_button(:url => post_url(post), :text => "'#{post.title}' #startuplessonslearned", :count => "horizontal" )%>
+							<div class="fb-like" data-href="<%= post_url(post) %>" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false"></div>
+</div><!-- .social -->
+
 <% end %>
 
-<br/>
+<br style='clear:both;'/>
 
 <p><%= will_paginate @posts %></p>
 <p><%= page_entries_info @posts %></p>
