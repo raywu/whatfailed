@@ -1,16 +1,35 @@
 <% @posts.each do |post| %>
 <div id="post">
-	<span id="title"><%= header(post) %></span>
-	<span id="url"><%= link(post) %></span>
-	<div id="tags">
-		<% post.tags.each do |tag| %>
-			<span id="tag"><%= link_to "##{tag.name}", tag %></span>
-		<% end %>
-	</div>
-	<div id="info">
-		Posted by <%= post.user.name %> <%= time_ago_in_words(post.created_at) %> ago
-		[ <%= link_to '{num} Comment', post_path(post, :anchor => "disqus_thread") %> ]
-	</div>
+	<table>
+	<tr>
+		<td>
+				<%= tweet_button(:url => post_url(post), :text => "'#{post.title}' #startuplessonslearned", :count => "none" )%>
+				<div id="fb-root"></div>
+				<script>(function(d, s, id) {
+				  var js, fjs = d.getElementsByTagName(s)[0];
+				  if (d.getElementById(id)) {return;}
+				  js = d.createElement(s); js.id = id;
+				  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+				  fjs.parentNode.insertBefore(js, fjs);
+				}(document, 'script', 'facebook-jssdk'));</script>
+
+				<div class="fb-like" data-href="<%= post_url(post) %>" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false"></div>
+		</td>
+		<td>
+			<span id="title"><%= header(post) %></span>
+			<span id="url"><%= link(post) %></span>
+			<div id="tags">
+				<% post.tags.each do |tag| %>
+					<span id="tag"><%= link_to "##{tag.name}", tag %></span>
+				<% end %>
+			</div>
+			<div id="info">
+				Posted by <%= post.user.name %> <%= time_ago_in_words(post.created_at) %> ago
+				[ <%= link_to '{num} Comment', post_path(post, :anchor => "disqus_thread") %> ]
+			</div>
+		</td>	
+	</tr>
+	</table>
 </div>
 <% end %>
 
