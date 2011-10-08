@@ -6,7 +6,7 @@ class Post < ActiveRecord::Base
   attr_reader :tag_tokens
   belongs_to :user
   cattr_reader :per_page
-  @@per_page = 4
+  @@per_page = 10
   
   validates :title, :presence => true
   validates :url, :allow_blank => true,
