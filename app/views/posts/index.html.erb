@@ -31,7 +31,7 @@
 	<h3>#FailTags</h3>
     <div>
 	<% Tag.all.each do |tag| %>
-		<div>
+		<div id="tag" style="padding:3px">
 			<%= link_to "##{tag.name}", tag %>	
 		</div>
 	<% end %>

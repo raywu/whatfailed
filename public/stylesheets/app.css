@@ -86,8 +86,34 @@ a {
 
 /** Forms **/
 
+
+#content{
+	width:960px;
+}
+
+#main{
+	float:left;
+	width:620px;
+}
+
+#sidebar{
+	float:right;
+	width:320px;
+	margin-left:20px
+}
+
 #post {
 	margin: 0px 0px 10px 0px;
+  float:left;
+  clear:both;
+  width:80%;
+}
+
+#social {
+  float:right;
+  width:20%;
+	margin: 10px 0px 10px 0px;
+  padding: 10px;
 }
 
 .msg {
@@ -183,21 +209,4 @@ h1 {
 #error_explanation ul li {
   font-size: 12px;
   list-style: square;
-}
-
-#content{
-	width:960px;
-}
-#main{
-	float:left;
-	width:620px;
-}
-#sidebar{
-	float:right;
-	width:320px;
-	margin-left:20px
-}
-
-#share{
-	clear:both;
 }
