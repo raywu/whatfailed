@@ -1,23 +1,25 @@
+<div id="showpost">
 <% title @tag.name %>
 
 <% @posts.each do |post| %>
 
 <div id="title">
 	<%= header(post) %> <span id="link"<%= link(post) %></span>
-</div>
+</div><!--.title-->
 
 <div id="tags">
 	<% post.tags.each do |tag| %>
 		<span id="tag"><%= link_to "##{tag.name}", tag %></span>
 	<% end %>
-</dib>
+</div><!--.tags-->
 
 <div id="info">
 	Posted by <%= post.user.name %> <%= time_ago_in_words(post.created_at) %> ago
 	[ <%= link_to 'Comment', post_path(post, :anchor => "disqus_thread"), 'data-disqus-identifier' => post.id %> ]
-</div>
+</div><!--.info-->
 
 <% end %>
 
 <p><%= will_paginate @posts %></p>
 <p><%= page_entries_info @posts %></p>
+</div><!--.showpost-->
