@@ -52,7 +52,7 @@
     <div>
     <% Tag.all.each do |tag| %>
     <div id="tag" style="padding:3px">
-      <%= link_to "##{tag.name}", tag %>	
+      <%= link_to "##{tag.name} (#{tag.posts.count})", tag %>
     </div>
     <% end %>
   </div><!-- .sidebar -->
