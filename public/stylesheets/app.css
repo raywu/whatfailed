@@ -57,7 +57,9 @@ body {
 }
 
 #sidebar{
-	float:right;
+  position:absolute;
+  right:150px;
+  top:80px;
   width:10%;
 	/* margin-left:20px;*/
   /* clear:both;*/
