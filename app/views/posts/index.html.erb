@@ -6,11 +6,11 @@
       <% post.tags.each do |tag| %>
         <span id="tag"><%= link_to "##{tag.name}", tag %></span>
       <% end %>
-  </div>
+    </div><!--.tags-->
   <div id="info">
       Posted by <%= post.user.name %> <%= time_ago_in_words(post.created_at) %> ago
       [ <%= link_to '{num} Comment', post_path(post, :anchor => "disqus_thread") %> ]
-    </div>	
+    </div><!--.info-->	
   </div><!-- .post -->
 
   <div class="social" style="float:left;width:20%">
