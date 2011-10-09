@@ -17,7 +17,7 @@ class TagsController < ApplicationController
   def show
     @tag = Tag.find(params[:id])
     @posts = @tag.posts
-    @posts = @posts.paginate :page => params[:page], :per_page => 4, :order => 'created_at DESC'
+    @posts = @posts.paginate :page => params[:page], :per_page => 10, :order => 'created_at DESC'
 
     respond_to do |format|
       format.html # show.html.erb
