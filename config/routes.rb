@@ -8,6 +8,9 @@ Whatfailed::Application.routes.draw do
   
   # posts
     resources :posts
+    match "/feed" => "posts#feed",
+      :as => :feed,
+      :defauts => { :format => 'rss' }
   
   # tags
     get '/tags' => "tags#index"

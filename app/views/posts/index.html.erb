@@ -1,7 +1,3 @@
-<% content_for :feed do %>
-  <%= auto_discovery_link_tag(:rss, "/feed.rss") %>
-<% end %>
-
 <% @posts.each do |post| %>
   <div id="post">
     <span id="title"><%= header(post) %></span>
