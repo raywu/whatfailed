@@ -1,41 +1,27 @@
-<div id="content">
-	<div id="main">
 <% @posts.each do |post| %>
-<div id="post" style="float:left;clear:both;width:80%;">
-			<span id="title"><%= header(post) %></span>
-			<span id="url"><%= link(post) %></span>
-			<div id="tags">
-				<% post.tags.each do |tag| %>
-					<span id="tag"><%= link_to "##{tag.name}", tag %></span>
-				<% end %>
-			</div>
-			<div id="info">
-				Posted by <%= post.user.name %> <%= time_ago_in_words(post.created_at) %> ago
-				[ <%= link_to '{num} Comment', post_path(post, :anchor => "disqus_thread") %> ]
-			</div>	
-</div><!-- .post -->
+  <div id="post">
+    <span id="title"><%= header(post) %></span>
+    <span id="url"><%= link(post) %></span>
+    <div id="tags">
+      <% post.tags.each do |tag| %>
+        <span id="tag"><%= link_to "##{tag.name}", tag %></span>
+      <% end %>
+  </div>
+  <div id="info">
+      Posted by <%= post.user.name %> <%= time_ago_in_words(post.created_at) %> ago
+      [ <%= link_to '{num} Comment', post_path(post, :anchor => "disqus_thread") %> ]
+    </div>	
+  </div><!-- .post -->
 
-<div class="social" style="float:right;width:20%">
-							<%= tweet_button(:url => post_url(post), :text => "'#{post.title}' #startuplessonslearned", :count => "horizontal" )%>
-							<div class="fb-like" data-href="<%= post_url(post) %>" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false"></div>
-</div><!-- .social -->
-
+  <div class="social" style="float:right;width:20%">
+                <%= tweet_button(:url => post_url(post), :text => "'#{post.title}' #startuplessonslearned", :count => "horizontal" )%>
+                <div class="fb-like" data-href="<%= post_url(post) %>" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false"></div>
+  </div><!-- .social -->
 <% end %>
 
 <br style="clear:both;"/>
-
 <p><%= will_paginate @posts %></p>
 <p><%= page_entries_info @posts %></p>
-</div>
-<div id="sidebar">
-	<h3>#FailTags</h3>
-    <div>
-	<% Tag.all.each do |tag| %>
-		<div id="tag" style="padding:3px">
-			<%= link_to "##{tag.name}", tag %>	
-		</div>
-	<% end %>
-    </div>
 </div>
 
 <div id="fb-root"></div>

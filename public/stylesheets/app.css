@@ -38,10 +38,36 @@ body {
 }
 
 #container {
-  background-color: #fff;
+  /* background-color: #fff;*/
   padding: 15px;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
+}
+
+#content{
+  float:left;
+  clear:both;
+  width:80%;
+}
+
+#sidebar{
+	float:right;
+  width:15%;
+	/* margin-left:20px;*/
+  /* clear:both;*/
+}
+
+#post {
+	margin: 0px 0px 10px 0px;
+  float:left;
+  clear:both;
+  width:80%;
+}
+
+#social {
+  float:right;
+  width:20%;
+	margin: 10px 0px 10px 0px;
 }
 
 a {
@@ -86,35 +112,6 @@ a {
 
 /** Forms **/
 
-
-#content{
-	width:960px;
-}
-
-#main{
-	float:left;
-	width:620px;
-}
-
-#sidebar{
-	float:right;
-	width:320px;
-	margin-left:20px
-}
-
-#post {
-	margin: 0px 0px 10px 0px;
-  float:left;
-  clear:both;
-  width:80%;
-}
-
-#social {
-  float:right;
-  width:20%;
-	margin: 10px 0px 10px 0px;
-  padding: 10px;
-}
 
 .msg {
   padding: 5px;

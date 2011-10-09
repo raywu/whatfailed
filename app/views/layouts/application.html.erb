@@ -34,16 +34,29 @@
 </div>
 
 <div id="container">
-<% if !yield(:title).empty? %>
-	<h1><%= yield(:title) %></h1>
-<% end %>
+  <% if !yield(:title).empty? %>
+  <h1><%= yield(:title) %></h1>
+  <% end %>
 
-<%- flash.each do |type, msg| -%>
-		<div class="msg" id="<%= type %>"><%= msg %></div>
-<%- end -%>
+  <%- flash.each do |type, msg| -%>
+  <div class="msg" id="<%= type %>"><%= msg %></div>
+  <%- end -%>
 
-<%= yield %>
-</div>
+  <div id="content">
+  <%= yield %>
+  <div/><!-- .content -->
+    
+  <div id="sidebar">
+  <h3>#FailTags</h3>
+    <div>
+    <% Tag.all.each do |tag| %>
+    <div id="tag" style="padding:3px">
+      <%= link_to "##{tag.name}", tag %>	
+    </div>
+    <% end %>
+  </div><!-- .sidebar -->
+</div><!-- .container -->
+
 
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
