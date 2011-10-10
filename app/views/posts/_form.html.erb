@@ -4,7 +4,7 @@
   <p><%= f.text_field :title %></p>
   <div><label>URL</label></div>
   <p><%= f.text_field :url %></p>
-	  <div><label>Your thoughts?</label></div>
+	  <div><label>Your thoughts/quotes</label></div>
 	<p><%= f.text_area :content %></p>
 	<div><label>#FailTags</label></div>
 	<p><%= f.text_field :tag_tokens, "data-pre" => @post.tags.map(&:attributes).to_json %></p>
