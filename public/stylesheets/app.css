@@ -19,8 +19,8 @@ body {
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
-  background-color: #ccc;
-  font-size: 16px;
+  /* background-color: #ccc;*/
+  font-size: 14px;
   width:960px;
   /* font-weight: bold;*/
 
