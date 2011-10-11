@@ -1,5 +1,7 @@
-<div id="showpost">
-<h1><%= @post.title %></h1>
+<div/ id="title" class="push_1">
+  <h1><%= @post.title %></h1>
+</div><!--.title-->
+<div/ class="prefix_1 grid_5">
 <p>
 	Posted by <%= @post.user.name %> <%= time_ago_in_words(@post.created_at) %> ago
 
@@ -43,4 +45,4 @@
 <div id="buttons">
 <%= render 'comment' %>
 </div><!--.buttons-->
-</div><!--.showpost-->
+</div><!--.-->

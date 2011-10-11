@@ -39,7 +39,9 @@
 
 <div id="content" class="grid_9" >
 <div id="title" class="grid_3 push_1 alpha">
-    <h1><%= yield(:title).present? ? yield(:title) : "Latest #Fails" %></h1>
+    <% if yield(:title).present? %>
+      <h1><%= yield(:title) %></h1>
+    <% end%>
 </div><!--title-->
   
 <div id="message" class="prefix_1 grid_2">
