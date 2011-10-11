@@ -4,7 +4,7 @@ class Post < ActiveRecord::Base
   has_many :tagships
   has_many :tags, :through => :tagships
   attr_reader :tag_tokens
-  belongs_to :user, :counter_cache => true
+  belongs_to :user
   cattr_reader :per_page
   @@per_page = 10
   

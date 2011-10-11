@@ -3,8 +3,8 @@ class AddPostsCountToTag < ActiveRecord::Migration
   add_column :tags, :posts_count, :integer, :default => 0
 
   Tag.reset_column_information
-  Tag.find(:all).each do |t|
-    Tag.update_counters t.id, :posts_count => t.posts.length
+  Tag.find_each do |t|
+    Tag.reset_counters t.id, :posts
   end
 end
 
