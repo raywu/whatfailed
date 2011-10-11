@@ -53,7 +53,7 @@
   <div id="sidebar" class="grid_2 prefix_1 omega" >
   <h3>#FailTags</h3>
     <div>
-    <% Tag.includes(:posts).all.each do |tag| %>
+      <% Tag.includes(:posts).find(:all, :order => "posts_count DESC").each do |tag| %>
     <div id="tag" style="padding:3px">
       <%= link_to "##{tag.name} (#{tag.posts.length})", tag %>
     </div>
