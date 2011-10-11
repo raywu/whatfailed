@@ -1,13 +1,14 @@
-<div id="submit">
+<div id="submit" class="prefix_1 grid_5">
 <%= form_for @post do |f| %>
-  <div><label>Title</label></div>
+  <div><label>#Title</label></div>
   <p><%= f.text_field :title %></p>
-  <div><label>URL</label></div>
+  <div><label>#Link</label></div>
   <p><%= f.text_field :url %></p>
-	  <div><label>Your thoughts/quotes</label></div>
+	  <div><label>#WhatFailed?</label></div>
 	<p><%= f.text_area :content %></p>
 	<div><label>#FailTags</label></div>
 	<p><%= f.text_field :tag_tokens, "data-pre" => @post.tags.map(&:attributes).to_json %></p>
 	<p><%= f.submit %></p>
 <% end %>
+
 </div><!--.submit-->

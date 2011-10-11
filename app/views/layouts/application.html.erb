@@ -38,19 +38,18 @@
 </div><!--.header-->
 
 <div id="content" class="grid_9" >
-<div id="title" class="grid_3 alpha">
-    <h1><%= yield(:title).present? ? yield(:title) : "Latest #Fail" %></h1>
+<div id="title" class="grid_3 push_1 alpha">
+    <h1><%= yield(:title).present? ? yield(:title) : "Latest #Fails" %></h1>
 </div><!--title-->
   
-<div id="message" class="grid_2 suffix_1">
+<div id="message" class="prefix_1 grid_2">
   <%- flash.each do |type, msg| -%>
   <div class="msg" id="<%= type %>"><%= msg %></div>
   <%- end -%>
 </div><!--.message-->
-  
     <%= yield %>
-  </div><!-- .content -->
-  <div id="sidebar" class="grid_2 prefix_1 omega" >
+</div><!-- .content -->
+  <div id="sidebar" class="prefix_1 grid_2 omega" >
   <h3>#FailTags</h3>
     <div>
       <% Tag.includes(:posts).find(:all, :order => "posts_count DESC").each do |tag| %>
@@ -87,4 +86,3 @@
   <br class="clear" />
 </body>
 </html>
-  

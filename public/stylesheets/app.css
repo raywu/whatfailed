@@ -54,11 +54,8 @@ body {
   clear:both;
 }
 
-#showpost {
-}
-
 #sidebar{
-  float:left
+  float:right
 }
 
 #post {
@@ -198,9 +195,10 @@ h1, h3 {
   vertical-align:baseline;
   text-decoration:underline;
     color: #777;
-	padding: 16px;
+	/* padding: 16px;*/
 	font-size: 16px;
 	text-decoration: none;
+  clear:both;
 }
 
 .field_with_errors {
