@@ -1,5 +1,6 @@
+html,body {min-height:100%}
 body {
-  padding: 25px 150px;
+  /* padding: 25px 150px;*/
   font-family: arial;
 
   /* Gradient Background */
@@ -15,7 +16,8 @@ body {
 
 #header {
   color: #fff;
-  padding: 8px 4px 8px 15px;
+  padding: 5px 4px 5px 15px;
+  margin-bottom: 15px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
@@ -35,43 +37,39 @@ body {
   background: linear-gradient(top, rgba(169,3,41,1) 0%,rgba(143,2,34,1) 44%,rgba(109,0,25,1) 100%); /* W3C */
 }
 
-#header a {
-  color: #fff;
+#logo {
+ margin:4px 0 
 }
 
 #container {
   /* background-color: #fff;*/
-  padding: 15px;
+  /* padding: 15px;*/
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
-  width:960px;
+  /* width:960px;*/
 }
 
 #content{
   float:left;
   clear:both;
-  width:80%;
 }
 
 #showpost {
-  width:80%;
 }
 
 #sidebar{
-  position:absolute;
-  right:150px;
-  top:80px;
-  width:10%;
+  float:left
 }
 
 #post {
-	margin: 0px 0px 10px 0px;
+  margin: 5px 0px;
   float:right;
   clear:both;
-  width:80%;
 }
 
 #social {
+  float:right;
+  margin: 5px 0px;
 }
 
 #paginate {
@@ -92,9 +90,8 @@ a {
   margin: 4px;
 }
 
-#nav-button {
+.nav-button {
   margin: 4px;
-  font-size: 14px;
   padding: 3px 8px 3px 8px;
   border-radius: 10px;
   -webkit-border-radius: 10px;
@@ -111,15 +108,19 @@ a {
   background: linear-gradient(top, rgba(238,238,238,1) 0%,rgba(163,163,163,1) 100%); /* W3C */
 }
 
-#nav-button a {
+.nav-button a {
   color: #444;
   text-decoration: none;
 }
+.nav-button a:visited {
+  color: #444;
+}
 
 #nav-user {
-  font-size: 12px;
+  margin:4px;
   float: right;
   font-weight: normal;
+  text-align:right;
 }
 
 

@@ -1,6 +1,6 @@
 <div id="showpost">
 <% @posts.each do |post| %>
-<div id="post">
+<div id="post" class="grid_7 omega" >
   <span id="title"><%= header(post) %></span>
   <span id="url"<%= link(post) %></span>
   <div id="tags">
@@ -14,7 +14,7 @@
   </div><!--.info-->
 </div><!--.post-->
 
-<div class="social" style="float:left;width:20%">
+<div id="social" class="grid_2 alpha" >
   <%= tweet_button(:url => post_url(post), :text => "'#{post.title}' #startuplessonslearned", :count => "horizontal" )%>
   <div class="fb-like" data-href="<%= post_url(post) %>" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false"></div>
 </div><!-- .social -->
@@ -26,12 +26,3 @@
 <p><%= page_entries_info @posts %></p>
 </div><!--.paginate-->
 </div><!--.showpost-->
-
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) {return;}
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
