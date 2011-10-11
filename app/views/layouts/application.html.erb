@@ -53,7 +53,7 @@
   <h3>#FailTags</h3>
     <div>
       <% Tag.includes(:posts).find(:all, :order => "posts_count DESC").each do |tag| %>
-    <div id="tag" style="padding:3px">
+    <div id="tag" style="padding:6px;">
       <%= link_to "##{tag.name} (#{tag.posts.length})", tag %>
     </div>
     <% end %>
