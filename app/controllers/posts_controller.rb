@@ -13,6 +13,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @votes = @post.votes
 
     respond_to do |format|
       format.html # show.html.erb
@@ -78,5 +79,38 @@ class PostsController < ApplicationController
       format.html
       format.rss { render :layout => false } #feed.rss.builder
     end
+  end
+
+  def vote_for
+    begin
+      if current_user.nil?
+         flash[:error] = "Please login first!"
+      end
+    rescue ActiveRecord::RecordInvalid
+      render :nothing => true, :status => 404
+    else
+        @vote_for = current_user.vote_for(@post = Post.find(params[:id]))
+        @vote_for.save!
+        redirect_back_or @post
+    end
+  end
+
+  def vote_against
+    begin
+      if current_user.nil?
+        flash[:error] = "Please login first!"
+      end
+    rescue ActiveRecord::RecordInvalid
+      render :nothing => true, :status => 404
+      else
+        if current_user.voted_on?(Post.find(params[:id]))
+          flash[:error] = "You need to sign in"
+          render @post
+        else
+          @vote_against = current_user.vote_for(@post = Post.find(params[:id]))
+          @vote_against.save!
+        redirect_back_or @post
+        end
+      end
   end
 end

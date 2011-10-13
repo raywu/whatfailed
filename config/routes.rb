@@ -7,7 +7,12 @@ Whatfailed::Application.routes.draw do
     match "/signout" => "sessions#destroy", :as => :signout
   
   # posts
-    resources :posts
+    resources :votes
+    resources :posts do
+      post :vote_for, :on => :member
+      post :vote_against, :on => :member
+    end
+
     match "/feed" => "posts#feed",
       :as => :feed,
       :defauts => { :format => 'rss' }

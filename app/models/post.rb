@@ -11,7 +11,9 @@ class Post < ActiveRecord::Base
   validates :title, :presence => true
   validates :url, :allow_blank => true,
                   :format => { :with => /^(http|https)/, :message => "needs to start with http:// or https://"}
-                  
+ 
+  acts_as_voteable
+  
  def tag_tokens=(ids)
    self.tag_ids = ids.split(",")
  end

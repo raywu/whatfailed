@@ -37,7 +37,10 @@
 <% end %>
 
 <div>
-<%= render 'share' %>
+  <%= render 'share' %>
+  <%= "Up" "#{@post.votes_for}" "Down" "#{@post.votes_against}" %>
+  <%= link_to('Thumbs Up', vote_for_post_path(@post), :method => :post ) %>
+  <%= link_to('Thumbs Down', vote_against_post_path(@post), :method => :post) %>
 </div>
 
 <div id="buttons">

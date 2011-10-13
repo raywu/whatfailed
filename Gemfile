@@ -10,9 +10,10 @@ gem 'omniauth'
 gem 'jquery-rails'
 
 gem 'friendly_id'
-gem "will_paginate", "~> 3.0.pre2"
+gem 'will_paginate', "~> 3.0.pre2"
 gem 'rdiscount'
 gem 'tweet-button'
+gem 'thumbs_up'
 
 group :development do
   gem 'rspec-rails', '2.6.1'
