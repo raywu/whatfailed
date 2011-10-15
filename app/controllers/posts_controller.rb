@@ -85,32 +85,35 @@ class PostsController < ApplicationController
     begin
       if current_user.nil?
          flash[:error] = "Please login first!"
-      end
-    rescue ActiveRecord::RecordInvalid
+      else
+        if current_user.voted_for?(@post = Post.find(params[:id]))
+          flash[:notice] = "You already voted up"
+        else
+          @vote_for = current_user.vote_exclusively_for(@post = Post.find(params[:id]))
+          @vote_for.save!
+        end
+        redirect_to :back
+       end
+      rescue ActiveRecord::RecordInvalid
       render :nothing => true, :status => 404
-    else
-        @vote_for = current_user.vote_for(@post = Post.find(params[:id]))
-        @vote_for.save!
-        redirect_back_or @post
     end
   end
 
   def vote_against
     begin
       if current_user.nil?
-        flash[:error] = "Please login first!"
-      end
-    rescue ActiveRecord::RecordInvalid
-      render :nothing => true, :status => 404
+         flash[:error] = "Please login first!"
       else
-        if current_user.voted_on?(Post.find(params[:id]))
-          flash[:error] = "You need to sign in"
-          render @post
+        if current_user.voted_against?(@post = Post.find(params[:id]))
+          flash[:notice] = "You already voted down"
         else
-          @vote_against = current_user.vote_for(@post = Post.find(params[:id]))
-          @vote_against.save!
-        redirect_back_or @post
+          @vote_for = current_user.vote_exclusively_against(@post = Post.find(params[:id]))
+          @vote_for.save!
         end
-      end
+        redirect_to :back
+       end
+      rescue ActiveRecord::RecordInvalid
+      render :nothing => true, :status => 404
+    end
   end
 end

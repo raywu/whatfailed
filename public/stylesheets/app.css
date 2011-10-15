@@ -59,7 +59,7 @@ body {
 }
 
 #post {
-  margin: 5px 0px;
+  margin: 10px, 0px, 5px, 5px;
   float:right;
   clear:both;
 }
@@ -68,6 +68,15 @@ body {
   float:right;
   margin: 5px 0px;
 }
+
+/* #share {*/
+/* -moz-column-count: 3;*/
+/* -moz-column-gap: 4px;*/
+/* -webkit-column-count: 3;*/
+/* -webkit-column-gap: 4px;*/
+/* column-count: 3;*/
+/* column-gap: 4px;*/
+/* }*/
 
 #paginate {
   color: #777;
