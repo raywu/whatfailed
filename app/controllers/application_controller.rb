@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
     if !@current_user
       flash[:error] = "Please login first!"
-      redirect_to(:root)
+      redirect_to :back
     end
   end
 end
