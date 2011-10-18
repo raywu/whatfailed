@@ -59,24 +59,16 @@ body {
 }
 
 #post {
-  margin: 10px, 0px, 5px, 5px;
+  margin: 10px 0px 10px 30px;
   float:right;
   clear:both;
 }
 
 #social {
   float:right;
-  margin: 5px 0px;
+  margin: 7px 0px 7px 20px;
+  padding: 1px;
 }
-
-/* #share {*/
-/* -moz-column-count: 3;*/
-/* -moz-column-gap: 4px;*/
-/* -webkit-column-count: 3;*/
-/* -webkit-column-gap: 4px;*/
-/* column-count: 3;*/
-/* column-gap: 4px;*/
-/* }*/
 
 #paginate {
   color: #777;
@@ -172,7 +164,23 @@ a {
     -moz-border-radius: 5px;
 	padding: 2px;
 	font-size: 12px;
-	text-decoration: none;
+	text-decoration: none
+  margin-bottom: 10px;
+}
+
+#tag-post a {
+    background: #eee;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    padding: 1px;
+    font-size: 12px;
+    text-decoration: none;
+    width:45px;
+    float:right;
+    display:inline;
+    clear:both;
+    margin: 10px 0px 0px 0px;
 }
 
 #url {

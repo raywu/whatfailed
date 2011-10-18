@@ -1,5 +1,5 @@
 <% @posts.each do |post| %>
-<div id="post" class="grid_6 pull_1 omega">
+<div id="post" class="grid_7 pull_1 omega" style="background:green;">
   <span id="title"><%= header(post) %></span>
   <span id="url"<%= link(post) %></span>
   <div id="tags">
@@ -13,11 +13,11 @@
   </div><!--.info-->
 </div><!--.post-->
 
-<div id="social" class="grid_2 pull_1 alpha">
-  <%= tweet_button(:url => post_url(post), :text => "'#{post.title}' #startuplessonslearned", :count => "horizontal" )%>
+<div id="social" class="grid_1 pull_2 alpha" style="background:red;">
+  <div style="margin-bottom: 5px;"><%= tweet_button(:url => post_url(post), :text => "'#{post.title}' #startuplessonslearned", :count => "horizontal" )%></div>
   <div class="fb-like" data-href="<%= post_url(post) %>" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false"></div>
 </div><!-- .social -->
-<div id="tag" class="push_1 grid_1" style='width:54px; float:right; margin: 5px;'>
+<div id="tag-post" class="grid_1 push_1" style="background:blue;">
   <%= link_to("#{post.votes_for} Up", vote_for_post_path(post), :method => :post ) %><br/>
   <%= link_to("#{post.votes_against} Down", vote_against_post_path(post), :method => :post) %>
 </div>
