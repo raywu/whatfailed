@@ -82,6 +82,17 @@ body {
     margin: 10px 0px;
 }
 
+#tag-on-post {
+    background: #eee;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    padding: 1px;
+    font-size: 12px;
+    text-decoration: none;
+    height:17px;
+}
+
 #tag-index a {
     background: #eee;
     border-radius: 5px;
@@ -90,7 +101,7 @@ body {
     padding: 2px;
     margin-bottom: 10px;
     font-size: 14px;
-    text-decoration: none
+    text-decoration: none;
 }
 
 #paginate {
@@ -188,7 +199,7 @@ a {
 	padding: 2px;
   margin-bottom: 10px;
 	font-size: 12px;
-	text-decoration: none
+	text-decoration: none;
 }
 
 #url {

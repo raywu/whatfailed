@@ -1,13 +1,10 @@
-<table>
-  <tr>
-    <td><%= tweet_button(:url => post_url(@post), :text => "'#{@post.title}' #startuplessonslearned", :count => "horizontal" )%></td>
-    <td><div class="fb-like" data-href="<%= post_url(@post) %>" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false"></div></td>
-    <td id="tag">
-  <%= link_to("#{@post.votes_for} Up's", vote_for_post_path(@post), :method => :post ) %>
-  <%= link_to("#{@post.votes_against} Down's", vote_against_post_path(@post), :method => :post) %>
-    </td>
-  </tr>
-</table>
+<div class="grid_1" id="tag-on-post">
+  <%= link_to(image_tag('Thumbs-up-icon.png', :alt => 'Vote up', :border => 0), vote_for_post_path(@post), :method => :post ) %>
+  <span style="vertical-align:super;"><%= "#{@post.plusminus}" %></span>
+  <%= link_to(image_tag('Thumbs-down-icon.png', :alt => 'Vote down', :border => 0), vote_against_post_path(@post), :method => :post) %>
+</div>
+<div class="grid_1" ><%= tweet_button(:url => post_url(@post), :text => "'#{@post.title}' #startuplessonslearned", :count => "horizontal" )%></div>
+<div class="grid_1 fb-like" data-href="<%= post_url(@post) %>" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false" style="margin:0px 45px;"></div>
 
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
