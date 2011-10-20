@@ -39,7 +39,7 @@
   </div><!--.nav-user-->
 </div><!--.header-->
 
-<div id="content" class="grid_10" >
+<div id="content" class="grid_10" style="background:blue" >
 <div id="title" class="grid_4 push_1 alpha">
     <% if yield(:title).present? %>
       <h1><%= yield(:title) %></h1>
@@ -53,7 +53,7 @@
 </div><!--.message-->
     <%= yield %>
 </div><!-- .content -->
-  <div id="sidebar" class="grid_2" >
+  <div id="sidebar" class="grid_2 omega" style="background:black">
   <h3>#FailTags</h3>
     <div>
       <% Tag.includes(:posts).order('posts_count DESC').each do |tag| %>

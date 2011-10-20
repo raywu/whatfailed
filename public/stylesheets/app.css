@@ -60,17 +60,15 @@ body {
 
 #post {
   margin: 10px 0px 10px 30px;
-  float:right;
   clear:both;
 }
 
 #social {
-  float:right;
-  margin: 10px 0px 10px 20px;
+  margin: 10px 0px 10px 0px;
   padding: 1px;
 }
 
-#tag-post a {
+#tag-post {
     background: #eee;
     border-radius: 5px;
     -webkit-border-radius: 5px;
@@ -78,17 +76,15 @@ body {
     padding: 1px;
     font-size: 12px;
     text-decoration: none;
-    width:45px;
-    float:right;
+    float:left;
     display:inline;
-    clear:both;
-    margin: 10px 0px 0px 0px;
+    margin: 10px 0px;
 }
 
 #tag-index a {
     background: #eee;
     border-radius: 5px;
-    -webkit-border-radius: 5px;
+    -webkit-border-radius: 5px;<D-r>
     -moz-border-radius: 5px;
     padding: 2px;
     margin-bottom: 10px;
