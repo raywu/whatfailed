@@ -36,16 +36,12 @@ body {
 #logo a {
   text-decoration:none;
   color: #fff;
-  display:table-cell;
-  vertical-align:middle;
   font-size:16px;
 }
 
 /** nav **/
 
 #nav {
-  display:table-cell;
-  vertical-align:middle;
 }
 
 .nav-button {
@@ -77,8 +73,6 @@ body {
 #nav-user {
   float: right;
   text-align:right;
-  display:table-cell;
-  vertical-align:middle;
 }
 
 /** content **/
@@ -150,6 +144,7 @@ body {
   font-size: 14px;
   padding:3px;
   vertical-align:middle;
+  /* text-decoration:none;*/
 }
 
 a {
