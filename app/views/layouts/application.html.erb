@@ -53,6 +53,10 @@
   <%- end -%>
 </div><!--.message-->
     <%= yield %>
+    <br style="clear:both;"/>
+    <div id="paginate" class="push_1" style="text-decoration:none";>
+      <p><%= link_to 'Back', :back %></p>
+    </div><!--.pagination-->  
 </div><!-- .content -->
   <div id="sidebar" class="grid_2 omega" >
   <h3>#FailTags</h3>
