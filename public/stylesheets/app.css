@@ -59,7 +59,7 @@ body {
 }
 
 #post {
-  margin: 10px 0px 10px 30px;
+  margin: 10px 0px 10px 0px;
   clear:both;
 }
 
@@ -78,6 +78,7 @@ body {
     text-decoration: none;
     float:left;
     display:inline;
+    width:22px;
     margin: 10px 0px;
 }
 
