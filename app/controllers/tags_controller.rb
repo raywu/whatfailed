@@ -8,7 +8,7 @@ class TagsController < ApplicationController
       format.html
       format.xml  { render :xml => @tags }
       format.json {
-        @tags = Tag.where("name like ?", "%#{params[:q]}%").select(['name', 'id'])
+        @tags = Tag.where("name ilike ?", "%#{params[:q]}%").select(['name', 'id'])
         render :json => @tags.map(&:attributes)
       }
     end
