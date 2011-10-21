@@ -13,7 +13,7 @@ Whatfailed::Application.routes.draw do
       post :vote_against, :on => :member
     end
 
-    match "/feed" => "posts#feed",
+    match "posts/feed" => "posts#feed",
       :as => :feed,
       :defauts => { :format => 'rss' }
   
