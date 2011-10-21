@@ -1,9 +1,9 @@
 <div id="submit" class="prefix_1 grid_5">
 <%= form_for @post do |f| %>
   <div><label>#Title</label></div>
-  <p><%= f.text_field :title %></p>
+  <p><%= f.text_field :title, :value => params[:title] %></p>
   <div><label>#URL</label></div>
-  <p><%= f.text_field :url %></p>
+  <p><%= f.text_field :url, :value => params[:url] %></p>
 	  <div><label>#WhatFailed?</label></div>
 	<p><%= f.text_area :content %></p>
 	<div><label>#FailTags</label></div>
