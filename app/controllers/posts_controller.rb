@@ -8,6 +8,7 @@ class PostsController < ApplicationController
     respond_to do |format|
       format.html #index.html.erb
       format.xml  { render :xml => @posts }
+      format.atom
     end
   end
 
@@ -72,17 +73,6 @@ class PostsController < ApplicationController
     end
   end
   
-  def feed
-    @title = "WhatFailed.us"
-    @posts = Post.order("updated_at desc")
-    @updated = @posts.first.updated_at unless @posts.empty?
-
-    respond_to do |format|
-      format.atom { render :layout => false }
-      format.rss { redirect_to feed_path(:format => :atom), :status => :moved_permanently }
-    end
-  end
-
   def vote_for
     begin
       if current_user.nil?
