@@ -21,14 +21,14 @@
 <div id="container" class="container_12">
 <div id="header" class="grid_12">
   <div id="logo" class="grid_3 alpha">
-    <%= link_to("WhatFailed.us — startup insight", :root) %>
+    <%= link_to("WhatFailed.us — startup insights", :root) %>
   </div><!--.logo-->
 	 <div id="nav" class="grid_2">
 	   <span class="nav-button"><%= link_to 'Latest', :root %></span>
 	   <span class="nav-button"><%= link_to 'Submit', new_post_path %></span>
    </div><!--.nav-->
    <div id="nav-user" class="grid_6 omega">
-     <span class="nav-button"><a href="https://whatfailed.wufoo.com/forms/z7x3k1/" onclick="window.open(this.href,  null, 'height=589, width=680, toolbar=0, location=0, status=1, scrollbars=1, resizable=1'); return false" title="WhatFailed's friends survey">Fill out an UX survey</a></span>
+     <span class="nav-button"><a href="https://whatfailed.wufoo.com/forms/z7x3k1/" onclick="window.open(this.href,  null, 'height=589, width=680, toolbar=0, location=0, status=1, scrollbars=1, resizable=1'); return false" title="WhatFailed's friends survey">UX survey</a></span>
 		<% if current_user %>
 		  Signed in as <%= current_user.name %>
 		  <span class="nav-button"><%= link_to "Sign Out", signout_path %></span>
