@@ -8,6 +8,8 @@
 	<p><%= f.text_area :content %></p>
 	<div><label>#FailTags</label></div>
 	<p><%= f.text_field :tag_tokens, "data-pre" => @post.tags.map(&:attributes).to_json %></p>
+	<div><label>#WhatFailed?</label></div>
+	<p><%= f.text_area :content %></p>
 	<p><%= f.submit %></p>
 <% end %>
 

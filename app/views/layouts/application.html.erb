@@ -13,7 +13,7 @@
   <%= javascript_include_tag :defaults, "jquery.tokeninput" %>
   <%= csrf_meta_tag %>
   <%= yield(:head) %>
-  <%= auto_discovery_link_tag :rss, "/feed.rss" %>
+  <%= auto_discovery_link_tag :atom, posts_path(:atom) %>
 </head>
 
 <body>
@@ -21,14 +21,14 @@
 <div id="container" class="container_12">
 <div id="header" class="grid_12">
   <div id="logo" class="grid_3 alpha">
-    <%= link_to("WhatFailed.us — startup insight", :root) %>
+    <%= link_to("WhatFailed.us — startup insights", :root) %>
   </div><!--.logo-->
 	 <div id="nav" class="grid_3">
 	   <span class="nav-button"><%= link_to 'Latest', :root %></span>
 	   <span class="nav-button"><%= link_to 'Submit', new_post_path %></span>
 	   <span class="nav-button"><%= link_to 'Bkmrklt', "javascript:window.location=%22http://localhost:3000/posts/new?title=%22+encodeURIComponent(document.title)+%22&url=%22+encodeURIComponent(document.location)" %></span>
    </div><!--.nav-->
-   <div id="nav-user" class="grid_5 omega">
+   <div id="nav-user" class="grid_6 omega">
      <span class="nav-button"><a href="https://whatfailed.wufoo.com/forms/z7x3k1/" onclick="window.open(this.href,  null, 'height=589, width=680, toolbar=0, location=0, status=1, scrollbars=1, resizable=1'); return false" title="WhatFailed's friends survey">UX survey</a></span>
 		<% if current_user %>
 		  Signed in as <%= current_user.name %>
@@ -60,7 +60,9 @@
     </div><!--.pagination-->  
 </div><!-- .content -->
   <div id="sidebar" class="grid_2 omega" >
-  <h3>#FailTags</h3>
+    <%= link_to image_tag("feed-icon.png", :alt => "Atom Feed", :border => 0), posts_path(:atom) %>
+    <br class="clear" />
+    <h3>#FailTags</h3>
     <div>
       <% Tag.includes(:posts).order('posts_count DESC').each do |tag| %>
     <div id="tag-index" style="padding:6px;">

@@ -8,6 +8,7 @@ class PostsController < ApplicationController
     respond_to do |format|
       format.html #index.html.erb
       format.xml  { render :xml => @posts }
+      format.atom
     end
   end
 
@@ -72,15 +73,6 @@ class PostsController < ApplicationController
     end
   end
   
-  def feed
-    @posts = Post.all(:select => "title, url, id, content, created_at", :order => "created_at DESC", :limit => 20) 
-
-    respond_to do |format|
-      format.html
-      format.rss { render :layout => false } #feed.rss.builder
-    end
-  end
-
   def vote_for
     begin
       if current_user.nil?
