@@ -73,11 +73,13 @@ class PostsController < ApplicationController
   end
   
   def feed
-    @posts = Post.all(:select => "title, url, id, content, created_at", :order => "created_at DESC", :limit => 20) 
+    @title = "WhatFailed.us"
+    @posts = Post.order("updated_at desc")
+    @updated = @posts.first.updated_at unless @posts.empty?
 
     respond_to do |format|
-      format.html
-      format.rss { render :layout => false } #feed.rss.builder
+      format.atom { render :layout => false }
+      format.rss { redirect_to feed_path(:format => :atom), :status => :moved_permanently }
     end
   end
 

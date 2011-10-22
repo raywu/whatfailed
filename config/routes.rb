@@ -12,10 +12,9 @@ Whatfailed::Application.routes.draw do
       post :vote_for, :on => :member
       post :vote_against, :on => :member
     end
-
-    match "posts/feed" => "posts#feed",
+    match "/feed" => "posts#feed",
       :as => :feed,
-      :defauts => { :format => 'rss' }
+      :defauts => { :format => 'atom' }
   
   # tags
     get '/tags' => "tags#index"
