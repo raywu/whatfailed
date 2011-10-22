@@ -14,7 +14,7 @@
 </div><!--.post-->
 
 <div id="social" class="grid_1 push_1" >
-  <div style="margin-bottom: 5px;"><%= tweet_button(:url => post_url(post), :text => "'#{post.title}' #{post.tags.map(&:name).map(&:inspect) }", :count => "horizontal" )%></div>
+  <div style="margin-bottom: 5px;"><%= tweet_button(:url => post_url(post), :text => "'#{post.title}' #{post.tags.map(&:name).map { |t| '#'+t } }", :count => "horizontal" )%></div>
   <div class="fb-like" data-href="<%= post_url(post) %>" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false"></div>
 </div><!--.social-->
 <div id="tag-post" class="grid_1 pull_7" >
