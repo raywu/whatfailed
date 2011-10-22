@@ -59,7 +59,9 @@
     </div><!--.pagination-->  
 </div><!-- .content -->
   <div id="sidebar" class="grid_2 omega" >
-  <h3>#FailTags</h3>
+    <%= link_to image_tag("feed-icon.png", :alt => "Atom Feed", :border => 0), posts_path(:atom) %>
+    <br class="clear" />
+    <h3>#FailTags</h3>
     <div>
       <% Tag.includes(:posts).order('posts_count DESC').each do |tag| %>
     <div id="tag-index" style="padding:6px;">
