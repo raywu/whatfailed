@@ -14,7 +14,7 @@
 
 <p>
   <% if @post.url.blank? == false %>
-    <%= link_to "#{link(@post)}", @post.url %>
+    <%= link(@post) %>
   <% end %>
 </p>
 
