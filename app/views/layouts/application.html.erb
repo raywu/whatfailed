@@ -68,7 +68,8 @@
       <%= link_to "##{tag.name} (#{tag.posts.length})", tag %>
     </div>
     <% end %>
-    <div class="fb-like-box" data-href="http://www.facebook.com/apps/application.php?id=240443122674939" data-width="292" data-show-faces="false" data-stream="false" data-header="true"></div><br/>
+    <div class="fb-like-box" data-href="http://www.facebook.com/apps/application.php?id=297086536985505" data-width="292" data-show-faces="false" data-stream="false" data-header="true"></div><br/>
+    <div id="fb-root"></div>
     <div><a href="https://twitter.com/whatfailed" class="twitter-follow-button" data-show-count="false">Follow @whatfailed</a></div><br/>
   </div><!-- .sidebar -->
 </div><!-- .container -->
@@ -89,15 +90,14 @@
         s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
         (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
     }());
-  
+
     (function(d, s, id) {
       var js, fjs = d.getElementsByTagName(s)[0];
       if (d.getElementById(id)) {return;}
       js = d.createElement(s); js.id = id;
-      js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+      js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=297086536985505";
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
-  
   </script>
   <br class="clear" />
 </body>
