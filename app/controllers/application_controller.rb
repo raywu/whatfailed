@@ -12,8 +12,8 @@ class ApplicationController < ActionController::Base
   def authed
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
     if !@current_user
-      flash[:error] = "Please login first!"
-      redirect_to :back
+      # flash[:error] = "Please login first!"
+      redirect_to :login
     end
   end
 end
