@@ -59,8 +59,7 @@
     </div><!--.pagination-->  
 </div><!-- .content -->
   <div id="sidebar" class="grid_2 omega" >
-    <%= link_to image_tag("feed-icon.png", :alt => "Atom Feed", :border => 0), posts_path(:atom) %>
-    <br class="clear" />
+    <div style="margin-bottom:20px" ><%= link_to image_tag("feed-icon.png", :alt => "Atom Feed", :border => 0), posts_path(:atom) %></div>
     <h3>#FailTags</h3>
     <div>
       <% Tag.includes(:posts).order('posts_count DESC').each do |tag| %>
@@ -68,6 +67,8 @@
       <%= link_to "##{tag.name} (#{tag.posts.length})", tag %>
     </div>
     <% end %>
+    <div class="fb-like-box" data-href="http://www.facebook.com/apps/application.php?id=240443122674939" data-width="292" data-show-faces="false" data-stream="false" data-header="true"></div><br/>
+    <div><a href="https://twitter.com/whatfailed" class="twitter-follow-button" data-show-count="false">Follow @whatfailed</a></div><br/>
   </div><!-- .sidebar -->
 </div><!-- .container -->
 
@@ -75,6 +76,7 @@
 <div id="fb-root"></div>
 <script type="text/javascript">var _kiq = _kiq || [];</script>
 <script type="text/javascript" src="//s3.amazonaws.com/ki.js/25079/4YC.js" async="true"></script>
+<script src="//platform.twitter.com/widgets.js" type="text/javascript"></script>
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
     var disqus_shortname = 'whatfailedus'; // required: replace example with your forum shortname
