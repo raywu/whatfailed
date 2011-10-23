@@ -6,7 +6,7 @@ module PostsHelper
     if post.url.blank?
       link_to post.title, post
     else
-      link_to post.title, post.url
+      link_to post.title, post.url, html_options = { :target => "_blank" }
 		end
 	end
 	
