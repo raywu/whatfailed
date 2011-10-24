@@ -125,17 +125,6 @@ body {
     height:17px;
 }
 
-#tag-index {
-    background: #eee;
-    border-radius: 5px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    padding: 2px;
-    margin-bottom: 10px;
-    font-size: 14px;
-    text-decoration: none;
-}
-
 #tag-index a {
     background: #eee;
     border-radius: 5px;
