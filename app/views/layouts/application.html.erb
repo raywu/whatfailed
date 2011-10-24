@@ -20,15 +20,15 @@
 <body>
 	
 <div id="container" class="container_12">
-<div id="header" class="grid_12">
-  <div id="logo" class="grid_3 alpha">
-    <%= link_to("WhatFailed.us — startup insights", :root) %>
+<div id="header" class="grid_12" >
+  <div id="logo" class="grid_3 alpha" >
+    <%= link_to image_tag("WhatFailed_1_small.png", :alt => "Home", :border => 0), :root %>
   </div><!--.logo-->
-	 <div id="nav" class="grid_2">
+	 <div id="nav" class="grid_3" >
 	   <span class="nav-button"><%= link_to 'Latest', :root %></span>
 	   <span class="nav-button"><%= link_to 'Submit', new_post_path %></span>
    </div><!--.nav-->
-   <div id="nav-user" class="grid_6 omega">
+   <div id="nav-user" class="grid_5 omega" >
      <span class="nav-button"><a href="https://whatfailed.wufoo.com/forms/z7x3k1/" onclick="window.open(this.href,  null, 'height=589, width=680, toolbar=0, location=0, status=1, scrollbars=1, resizable=1'); return false" title="WhatFailed's friends survey">UX survey</a></span>
 		<% if current_user %>
 		  Signed in as <%= current_user.name %>
@@ -62,14 +62,16 @@
   <div id="sidebar" class="grid_2 omega" >
     <div style="margin-bottom:20px" ><%= link_to image_tag("feed-icon.png", :alt => "Atom Feed", :border => 0), posts_path(:atom) %></div>
     <h3>#FailTags</h3>
-    <div>
+    <div style="margin-bottom:30px">
       <% Tag.includes(:posts).order('posts_count DESC').each do |tag| %>
-    <div id="tag-index" style="padding:6px;">
+      <div id="tag-index" style="padding:6px;">
       <%= link_to "##{tag.name} (#{tag.posts.length})", tag %>
     </div>
     <% end %>
-    <div class="fb-like-box" data-href="http://www.facebook.com/apps/application.php?id=297086536985505" data-width="292" data-show-faces="false" data-stream="false" data-header="true"></div><br/>
-    <div><a href="https://twitter.com/whatfailed" class="twitter-follow-button" data-show-count="false">Follow @whatfailed</a></div><br/>
+    <div id="community">
+      <div class="fb-like-box" data-href="http://www.facebook.com/apps/application.php?id=297086536985505" data-width="292" data-show-faces="false" data-stream="false" data-header="true"></div><br/>
+      <div style="margin-left:10px"><a href="https://twitter.com/whatfailed" class="twitter-follow-button" data-show-count="false">Follow @whatfailed</a></div>
+    </div><!--.community-->
   </div><!-- .sidebar -->
 </div><!-- .container -->
 
