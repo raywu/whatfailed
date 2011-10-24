@@ -92,6 +92,15 @@
         (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
     }());
 
+
+    window.fbAsyncInit = function() {
+      FB.init({
+          appId: '297086536985505', // Your Facebook ID
+          status: true, 
+          cookie: true,
+          xfbml: true
+      });
+    };
     (function(d, s, id) {
       var js, fjs = d.getElementsByTagName(s)[0];
       if (d.getElementById(id)) {return;}
