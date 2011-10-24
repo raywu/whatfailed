@@ -35,7 +35,7 @@ body {
 #nav {
   vertical-align:text-bottom;
   float:left;
-  margin: 17px 0px 0px 30px;
+  margin: 12px 0px 0px 30px;
 }
 
 .nav-button {
@@ -68,7 +68,7 @@ body {
   float: right;
   text-align:right;
   vertical-align:text-bottom;
-  margin-top: 17px;
+  margin-top: 12px;
   color: #fff;
 }
 
