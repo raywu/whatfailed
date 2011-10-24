@@ -4,13 +4,4 @@
   <%= link_to(image_tag('Thumbs-down-icon.png', :alt => 'Vote down', :border => 0), vote_against_post_path(@post), :method => :post) %>
 </div>
 <div class="grid_1" ><%= tweet_button(:url => post_url(@post), :text => "'#{@post.title}' #{@post.tags.map(&:name).map { |t| '#'+t } }", :count => "horizontal" )%></div>
-<div class="grid_1 fb-like" data-href="" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false" style="margin:0px 45px;"></div>
-
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) {return;}
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+<div class="grid_1 fb-like" data-href="<% "#{post_url(@post)}" %>" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false" style="margin:0px 45px;"></div>
