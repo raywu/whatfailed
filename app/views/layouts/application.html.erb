@@ -2,8 +2,8 @@
  <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# whatfailed: http://ogp.me/ns/fb/whatfailed#">
  <meta property="fb:app_id"      content="297086536985505">
  <meta property="og:type"        content="whatfailed:article" />
- <meta property="og:url"         content="http://www.whatfailed.us/posts/why-wesabe-lost-to-mint">
- <meta property="og:title"       content="WHY WESABE LOST TO MINT">
+ <meta property="og:url"         content="<%= content_for?(:ogmetaurl) ? yield(:ogmetaurl) : "http://www.whatfailed.us/" %>">
+ <meta property="og:title"       content="<%= content_for?(:title) ? yield(:title) : "WhatFailed.us" %>">
  <meta property="og:site_name"   content="WhatFailed.us">
  <meta property="og:description" content="startup insights">
  <meta property="og:image"       content="http://www.whatfailed.us/images/emu_twitter_logo.jpg">
