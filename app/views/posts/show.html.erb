@@ -1,5 +1,5 @@
 <% content_for :ogmetaurl do %>
-  <%= post_url(@post) %>
+  <%= h(post_url(@post)) %>
 <% end %>
 
 <% title "#{@post.title}" %>
