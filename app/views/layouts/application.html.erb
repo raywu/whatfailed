@@ -42,7 +42,7 @@
 
 <div id="content" class="grid_10" >
   <br/>
-<div id="title" class="grid_4 push_1 alpha">
+<div id="title" class="grid_7 push_1 alpha">
     <% if yield(:title).present? %>
       <h1><%= yield(:title) %></h1>
     <% end%>
@@ -55,7 +55,7 @@
 </div><!--.message-->
     <%= yield %>
     <br style="clear:both;"/>
-    <div id="paginate" class="push_1" style="text-decoration:none";>
+    <div id="paginate" class="push_1" style="text-decoration:none">
       <p><%= link_to 'Back', :back %></p>
     </div><!--.pagination-->  
 </div><!-- .content -->
