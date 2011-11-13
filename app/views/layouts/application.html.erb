@@ -2,7 +2,7 @@
  <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# whatfailed: http://ogp.me/ns/fb/whatfailed#">
  <meta property="fb:app_id"      content="297086536985505">
  <meta property="og:type"        content="whatfailed:article" />
- <meta property="og:url"         content="<%= content_for?(:ogmetaurl) ? yield(:ogmetaurl) : "http://www.whatfailed.us/" %>">
+ <meta property="og:url"         content="<%= content_for?(:ogmetaurl) ? "#{yield(:ogmetaurl)}".strip : "http://www.whatfailed.us/" %>">
  <meta property="og:title"       content="<%= content_for?(:title) ? yield(:title) : "WhatFailed.us" %>">
  <meta property="og:site_name"   content="WhatFailed.us">
  <meta property="og:description" content="startup insights">
