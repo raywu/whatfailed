@@ -7,12 +7,12 @@ module PostsHelper
       link_to post.title, post
     else
       link_to post.title, post.url, html_options = { :target => "_blank" }
-		end
+    end
 	end
 	
 	def link(post)
 	    if post.url?
-	      "(#{URI.parse(post.url).host})"
+	      link_to "(#{URI.parse(post.url).host})", post.url, html_options = { :target => "_blank" }
 	    end
 	end
 end

@@ -4,8 +4,12 @@ if( window.opener ) {
 }
 </script>
 
+<% content_for :ogmetaurl do %>
+  <%= h(post_url(@post)) %>
+<% end %>
+
 <% title "#{@post.title}" %>
-<div/ class="prefix_1 grid_5">
+<div/ class="prefix_1 grid_8">
 <p>
 	Posted by <%= @post.user.name %> <%= time_ago_in_words(@post.created_at) %> ago
 
@@ -20,7 +24,7 @@ if( window.opener ) {
 
 <p>
   <% if @post.url.blank? == false %>
-    <%= link_to "#{link(@post)}", @post.url %>
+    <%= link(@post) %>
   <% end %>
 </p>
 
