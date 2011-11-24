@@ -108,4 +108,10 @@ class PostsController < ApplicationController
       render :nothing => true, :status => 404
     end
   end
+
+  def login
+    # respond_to do |format|
+    #   format.html #login.html.erb
+    # end
+  end
 end

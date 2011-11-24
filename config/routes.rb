@@ -15,6 +15,7 @@ Whatfailed::Application.routes.draw do
   
   #login
     match "/login" => "posts#login", :as => :login
+
   # tags
     get '/tags' => "tags#index"
     get '/tags/:id' => "tags#show", :as => :tag
