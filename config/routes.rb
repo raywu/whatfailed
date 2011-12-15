@@ -6,6 +6,7 @@ Whatfailed::Application.routes.draw do
     match "/signin" => "sessions#new", :as => :signin
     match "/auth/:provider/callback" => "sessions#create"
     match "/signout" => "sessions#destroy", :as => :signout
+    match "/auth/failure", to: "sessions#failure"
     resources :identities
   
   # posts
