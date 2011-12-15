@@ -12,8 +12,7 @@ class ApplicationController < ActionController::Base
   def authed
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
     if !@current_user
-      # flash[:error] = "Please login first!"
-      render :login
+      render 'sessions/new'
     end
   end
 end

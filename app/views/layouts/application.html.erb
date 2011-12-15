@@ -48,8 +48,7 @@
 		  Signed in as <%= current_user.name %>
 		  <span class="nav-button"><%= link_to "Sign Out", signout_path %></span>
 		<% else %>
-		  <span class="nav-button"><%= link_to "Login with Twitter", "/auth/twitter" %></span>
-		  <span class="nav-button"><%= link_to "Login with Facebook", "/auth/facebook" %></span>
+		  <span class="nav-button"><%= link_to "Sign In", signin_path %></span>
 		<% end %>
   </div><!--.nav-user-->
 </div><!--.header-->

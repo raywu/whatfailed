@@ -14,4 +14,8 @@ class SessionsController < ApplicationController
   rescue ActionController::RedirectBackError
     redirect_to :root
   end
+
+  def failure
+    redirect_to root_url, alert: "Authentication failed, please try again."
+  end
 end

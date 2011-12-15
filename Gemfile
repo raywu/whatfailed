@@ -6,7 +6,10 @@ gem 'sqlite3'
 gem 'autotest'
 gem 'taps'
 
-gem 'omniauth'
+gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
+gem 'omniauth-identity'
 
 gem 'jquery-rails'
 

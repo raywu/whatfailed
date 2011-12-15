@@ -3,8 +3,10 @@ Whatfailed::Application.routes.draw do
   root :to => "posts#index"
   
   # omniauth
-    match "/auth/:provider/callback" => "sessions#create", :as => :signin
+    match "/signin" => "sessions#new", :as => :signin
+    match "/auth/:provider/callback" => "sessions#create"
     match "/signout" => "sessions#destroy", :as => :signout
+    resources :identities
   
   # posts
     resources :votes
@@ -14,7 +16,7 @@ Whatfailed::Application.routes.draw do
     end
   
   #login
-    match "/login" => "posts#login", :as => :login
+    # match "/login" => "posts#login", :as => :login
 
   # tags
     get '/tags' => "tags#index"
