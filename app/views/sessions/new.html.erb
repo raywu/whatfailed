@@ -1,5 +1,8 @@
-<% if current_user %>
-  <h1>User Profile</h1>
+<div id="post" class="grid_7 push_1">
+  <% if current_user %>
+    <% content_for :title do %>
+      <%= "User Profile" %>
+    <% end %>
   <p>
     <strong>Name:</strong>
     <%= current_user.name %>
@@ -13,38 +16,43 @@
     <%= current_user.uid %>
   </p>
   <p><%= link_to "Sign out", signout_path %></p>
+
 <% else %>
 
-  <h1>Sign In</h1>
-
-  <p><strong>Sign in through one of these services:</strong></p>
-
-  <div class="auth_providers">
-    <a href="/auth/twitter" class="auth_provider">
+    <% content_for :title do %>
+      <%= "Sign In" %>
+    <% end %>
+  
+    <div class="grid_7">
+      <p><strong>Sign in through one of these services:</strong></p>
+    <a href="/auth/twitter" id="auth_providers" class="grid_1 alpha">
       <%= image_tag "twitter_64.png", size: "64x64", alt: "Twitter" %>
-      Twitter
+      <h3>Twitter</h3>
     </a>
-    <a href="/auth/facebook" class="auth_provider">
+    <a href="/auth/facebook" id="auth_providers" class="grid_1 omega">
       <%= image_tag "facebook_64.png", size: "64x64", alt: "Facebook" %>
-      Facebook
+      <h3>Facebook</h3>
     </a>
-  </div><!--auth_providers-->
-  
-  <p>
-    <strong>Don't use these services?</strong>
-    <%= link_to "Create an account", new_identity_path %> or login below.
-  </p>
-  
-  <%= form_tag "/auth/identity/callback" do %>
-    <div class="field">
-      <%= label_tag :auth_key, "Email" %><br>
-      <%= text_field_tag :auth_key %>
-    </div>
-    <div class="field">
-      <%= label_tag :password %><br>
-      <%= password_field_tag :password %>
-    </div>
-    <div class="actions"><%= submit_tag "Login" %></div>
-  <% end %>
-<% end %>
+  </div><!--.auth_providers-->
 
+  <div id="login" class="grid_7">
+    <p>
+      <strong>Don't use these services?</strong>
+      <%= link_to "Create an account", new_identity_path %> or login below.
+    </p>
+      <div id="login_form"> 
+        <%= form_tag "/auth/identity/callback" do %>
+          <div class="field">
+            <%= label_tag :auth_key, "Email" %><br>
+            <%= text_field_tag :auth_key %>
+          </div>
+          <div class="field">
+            <%= label_tag :password %><br>
+            <%= password_field_tag :password %>
+          </div>
+          <div class="actions"><%= submit_tag "Login" %></div>
+          <% end %>
+        <% end %>
+    </div><!--.login_form-->
+  </div><!--.login-->
+</div><!--.post-->

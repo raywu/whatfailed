@@ -265,3 +265,27 @@ h1, h3 {
 #community {
   margin-top:30px;
 }
+
+#auth_providers {
+  text-decoration: none;
+}
+
+#login a {
+  font-weight: bold;
+  /* text-decoration: none;*/
+}
+
+#login_form {
+  color: #fff;
+  padding: 10px 10px;
+  margin-bottom: 15px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  display:table;
+
+  /* Gradient Background */
+  background-color: rgba(210, 35, 42, 1);
+}
