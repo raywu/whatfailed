@@ -37,12 +37,12 @@
   <div id="logo" class="grid_3 alpha" >
     <%= link_to image_tag("WhatFailed_1_small.png", :alt => "Home", :border => 0), :root %>
   </div><!--.logo-->
-	 <div id="nav" class="grid_3" >
-	   <span class="nav-button"><%= link_to 'Latest', :root %></span>
-	   <span class="nav-button"><%= link_to 'Submit', new_post_path %></span>
-     <span class="nav-button"><%= link_to 'Bkmrklt', 'javascript:var win = window.open( "http://localhost:3000/posts/new?popup=true&title=" + encodeURIComponent(document.title) + "&url=" + encodeURIComponent(document.location), "", "width=500,height=500,scrollbars=1" );'%></span>
+	 <div id="nav" class="grid_2" >
+	   <span class="nav-button"><%= link_to 'Home', :root %></span>
+	   <span class="nav-button"><%= link_to 'Submit New', new_post_path %></span>
    </div><!--.nav-->
-   <div id="nav-user" class="grid_5 omega" >
+   <div id="nav-user" class="grid_6 omega" >
+     <span class="nav-button"><%= link_to 'WF Bkmrklt', 'javascript:var win = window.open( "http://localhost:3000/posts/new?popup=true&title=" + encodeURIComponent(document.title) + "&url=" + encodeURIComponent(document.location), "", "width=500,height=500,scrollbars=1" );'%></span>
      <span class="nav-button"><a href="http://whatfailed.wufoo.com/forms/m7x3s5/" onclick="window.open(this.href,  null, 'height=713, width=680, toolbar=0, location=0, status=1, scrollbars=1, resizable=1'); return false" title="Feedback">Feedback</a></span>
 		<% if current_user %>
 		  Signed in as <%= current_user.name %>

@@ -1,7 +1,6 @@
 <div id="post" class="grid_7 push_1">
-    <% content_for :title do %>
-      <%= "User Profile" %>
-    <% end %>
+
+  <% title 'New User Profile' %>
 
     <div id="login_form"> 
       <%= form_tag "/auth/identity/register" do %>
