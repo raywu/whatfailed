@@ -10,10 +10,10 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111215002622) do
+ActiveRecord::Schema.define(:version => 20111216033848) do
 
   create_table "identities", :force => true do |t|
-    t.string   "user"
+    t.string   "name"
     t.string   "email"
     t.string   "password_digest"
     t.datetime "created_at"
@@ -64,6 +64,7 @@ ActiveRecord::Schema.define(:version => 20111215002622) do
     t.timestamp "created_at"
     t.timestamp "updated_at"
     t.string    "cached_slug"
+    t.string    "email"
   end
 
   create_table "votes", :force => true do |t|
