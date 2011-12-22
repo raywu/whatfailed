@@ -39,11 +39,11 @@
   </div><!--.logo-->
 	 <div id="nav" class="grid_2" >
 	   <span class="nav-button"><%= link_to 'Home', :root %></span>
-	   <span class="nav-button"><%= link_to 'Submit New', new_post_path %></span>
+	   <span class="nav-button" title="add a startup failure"><%= link_to 'Submit New', new_post_path %></span>
    </div><!--.nav-->
    <div id="nav-user" class="grid_6 omega" >
      <span class="nav-button" title="drag this to your bookmark bar"><%= link_to 'WF Bkmrklt', 'javascript:var win = window.open( "http://www.whatfailed.us/posts/new?popup=true&title=" + encodeURIComponent(document.title) + "&url=" + encodeURIComponent(document.location), "", "width=500,height=500,scrollbars=1" );'%></span>
-     <span class="nav-button"><a href="http://whatfailed.wufoo.com/forms/m7x3s5/" onclick="window.open(this.href,  null, 'height=713, width=680, toolbar=0, location=0, status=1, scrollbars=1, resizable=1'); return false" title="Tell us what you think">Feedback</a></span>
+     <span class="nav-button"><a href="http://whatfailed.wufoo.com/forms/m7x3s5/" onclick="window.open(this.href,  null, 'height=713, width=680, toolbar=0, location=0, status=1, scrollbars=1, resizable=1'); return false" title="tell us what you think">Feedback</a></span>
 		<% if current_user %>
 		  Signed in as <%= current_user.name %>
 		  <span class="nav-button"><%= link_to "Sign Out", signout_path %></span>
